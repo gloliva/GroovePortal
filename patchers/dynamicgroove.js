@@ -9,16 +9,21 @@ autowatch = 1;
 
 /*************************
 **** String Templates ****
-*************************/
+**************************/
 // Route object
-var routeObjectTemplate = "script|newobject|newobj|@text|route <route>|@varname|groove-route|@patching_position|<x>|<y>";
-var inletRouteConnectionTemplate = "script|connect|route-inlet|0|groove-route|0";
+var globalRouteObjectTemplate = "script|newobject|newobj|@text|route <route>|@varname|global-groove-route|@patching_position|<x>|<y>";
+var inletGlobalRouteConnectionTemplate = "script|connect|target-groove-inlet|0|global-groove-route|0";
+var subRouteObjectTemplate = "script|newobject|newobj|@text|route g1 g2 g3 amp|@varname|<groove>-route|@patching_position|<x>|<y>";
+var globalRouteSubRouteConnectionTemplate = "script|connect|global-groove-route|<outlet>|<groove>-route|0";
 
 // Groove objects
 var grooveObjectTemplate = "script|newobject|newobj|@text|groove~ <name>|@varname|<name>|@fixwidth|1|@patching_position|<x>|<y>";
-var routeGrooveConnectionTemplate = "script|connect|groove-route|<outlet>|<groove>|0";
-var grooveAmpObjectTemplate = "script|newobject|newobj|@text|*~ 1.|@varname|<name>-amp|@fixwidth|1|@patching_position|<x>|<y>";
+var subRouteGrooveConnectionTemplate = "script|connect|<groove>-route|<outlet>|<groove>|<outlet>";
+
+// Amplitude Multiplication objects
+var grooveAmpObjectTemplate = "script|newobject|newobj|@text|*~ 1.|@varname|<groove>-amp|@fixwidth|1|@patching_position|<x>|<y>";
 var grooveAmpConnectionTemplate = "script|connect|<groove>|0|<groove>-amp|0";
+var subRouteAmpConnectionTemplate = "script|connect|<groove>-route|3|<groove>-amp|1";
 
 // Matrix object
 var matrixObjectTemplate = "script|newobject|newobj|@text|matrix~ <num> 2|@varname|groove-matrix||@patching_position|<x>|<y>";
@@ -26,3 +31,269 @@ var grooveAmpMatrixConnectionTemplate = "script|connect|<groove>|"
 
 // Misc scripting
 var deleteObjectTemplate = "script|delete|<obj>";
+
+
+/***********************
+**** Input / Output ****
+************************/
+var outMsg = new Array();
+
+var grooveChange = 0;
+var numGrooves = 1;
+var globalRouteOutlets = 1;
+
+
+/******************
+**** Constants ****
+*******************/
+var numGrooveInlets = 3;
+
+
+/***************************
+**** Position Variables ****
+****************************/
+var objectOffsetX = 50;
+var objectSpacingX = 150;
+var globalRouteX = 50;
+var globalRouteY = 650;
+var subRouteY = 750;
+var grooveY = 800;
+var ampY = 850;
+var matrixY = 1000;
+
+
+/****************************
+**** Max Input Functions ****
+*****************************/
+function msg_int(i) {
+    if (i > 0) {
+        grooveChange = 1;
+    } else if (i < 0) {
+        grooveChange = -1;
+    } else {
+        grooveChange = 0;
+    }
+
+    // Short-circuit if trying to remove a single groove
+    if (grooveChange === -1 && numGrooves === 1) {
+        return;
+    }
+
+    output();
+}
+
+
+function bang() {
+    output();
+}
+
+
+/*****************************
+**** Max Output Functions ****
+******************************/
+function output() {
+    // Increase grooves
+    if (grooveChange === 1) {
+        numGrooves += 1;
+        var grooveName = "g" + numGrooves;
+        var groovePosX = objectOffsetX + (objectSpacingX * (numGrooves - 1))
+
+        // Recreate global route
+        deleteGlobalRoute();
+        createGlobalRoute();
+        connectInletToGlobalRoute();
+
+        // Create sub routes
+        createSubRoute(grooveName, groovePosX);
+        connectGlobalRouteToSubRoutes();
+
+        // Create groove objects
+        createGroove(grooveName, groovePosX);
+        createAmp(grooveName, groovePosX);
+        connectGrooveToAmp(grooveName);
+        connectSubRouteToGroove(grooveName);
+        connectSubRouteToAmp(grooveName);
+    // Decrease grooves
+    } else if (grooveChange === -1) {
+        var grooveName = "g" + numGrooves;
+
+        // Remove last groove
+        deleteGroove(grooveName);
+
+        // Remove last subroute
+        deleteSubRoute(grooveName);
+
+        // Remove last amp
+        deleteAmp(grooveName);
+
+        numGrooves -= 1;
+
+        // Recreate global route
+        deleteGlobalRoute();
+        createGlobalRoute();
+        connectInletToGlobalRoute();
+
+        // Connect all sub routes to global route
+        connectGlobalRouteToSubRoutes();
+    }
+}
+
+
+/*************************
+**** Create Functions ****
+**************************/
+function createGlobalRoute() {
+    var routeText = "";
+    for (var i = 0; i < numGrooves; i++) {
+        routeText = routeText + i + " ";
+    }
+
+    var globalRouteObject = globalRouteObjectTemplate
+        .replace("<route>", routeText.trim())
+        .replace("<x>", globalRouteX)
+        .replace("<y>", globalRouteY);
+
+    outMsg = globalRouteObject.split("|");
+    outlet(0, outMsg);
+}
+
+
+function createSubRoute(grooveName, groovePosX) {
+    var subRouteObject = subRouteObjectTemplate
+        .replace("<groove>", grooveName)
+        .replace("<x>", groovePosX)
+        .replace("<y>", subRouteY);
+
+    outMsg = subRouteObject.split("|");
+    outlet(0, outMsg);
+
+}
+
+
+function createGroove(grooveName, groovePosX) {
+    var grooveObject = grooveObjectTemplate
+        .replace("<name>", grooveName)
+        .replace("<name>", grooveName)
+        .replace("<x>", groovePosX)
+        .replace("<y>", grooveY);
+
+    outMsg = grooveObject.split("|");
+    outlet(0, outMsg);
+}
+
+
+function createAmp(grooveName, groovePosX) {
+    var grooveAmpObject = grooveAmpObjectTemplate
+        .replace("<groove>", grooveName)
+        .replace("<x>", groovePosX)
+        .replace("<y>", ampY);
+
+    outMsg = grooveAmpObject.split("|");
+    outlet(0, outMsg);
+}
+
+
+/*************************
+**** Delete Functions ****
+**************************/
+function deleteGlobalRoute() {
+    var deleteObject = deleteObjectTemplate
+        .replace("<obj>", "global-groove-route");
+    outMsg = deleteObject.split("|");
+    outlet(0, outMsg);
+}
+
+
+function deleteGroove(grooveName) {
+    var deleteObject = deleteObjectTemplate
+        .replace("<obj>", grooveName);
+    outMsg = deleteObject.split("|");
+    outlet(0, outMsg);
+}
+
+
+function deleteSubRoute(grooveName) {
+    var deleteObject = deleteObjectTemplate
+        .replace("<obj>", grooveName + "-route");
+    outMsg = deleteObject.split("|");
+    outlet(0, outMsg);
+}
+
+
+function deleteAmp(grooveName) {
+    var deleteObject = deleteObjectTemplate
+        .replace("<obj>", grooveName + "-amp");
+    outMsg = deleteObject.split("|");
+    outlet(0, outMsg);
+}
+
+
+/**************************
+**** Connect Functions ****
+***************************/
+function connectInletToGlobalRoute() {
+    outMsg = inletGlobalRouteConnectionTemplate.split("|");
+    parseIntsInArray(outMsg);
+    outlet(0, outMsg);
+}
+
+
+function connectGlobalRouteToSubRoutes() {
+    for (var grooveIdx = 0; grooveIdx < numGrooves; grooveIdx++) {
+        var globalRouteSubRouteConnection = globalRouteSubRouteConnectionTemplate
+        .replace("<outlet>", grooveIdx)
+        .replace("<groove>", "g" + (grooveIdx + 1));
+
+        outMsg = globalRouteSubRouteConnection.split("|");
+        parseIntsInArray(outMsg);
+        outlet(0, outMsg);
+    }
+}
+
+
+function connectGrooveToAmp(grooveName) {
+    var grooveAmpConnection = grooveAmpConnectionTemplate
+        .replace("<groove>", grooveName)
+        .replace("<groove>", grooveName);
+
+        outMsg = grooveAmpConnection.split("|");
+        parseIntsInArray(outMsg);
+        outlet(0, outMsg);
+}
+
+
+function connectSubRouteToGroove(grooveName) {
+    for (var outletIdx = 0; outletIdx < numGrooveInlets; outletIdx++) {
+        var subRouteGrooveConnection = subRouteGrooveConnectionTemplate
+        .replace("<groove>", grooveName)
+        .replace("<outlet>", outletIdx)
+        .replace("<groove>", grooveName)
+        .replace("<outlet>", outletIdx);
+
+        outMsg = subRouteGrooveConnection.split("|");
+        parseIntsInArray(outMsg);
+        outlet(0, outMsg);
+    }
+}
+
+
+function connectSubRouteToAmp(grooveName) {
+    var subRouteAmpConnection = subRouteAmpConnectionTemplate
+        .replace("<groove>", grooveName)
+        .replace("<groove>", grooveName);
+
+        outMsg = subRouteAmpConnection.split("|");
+        parseIntsInArray(outMsg);
+        outlet(0, outMsg);
+}
+
+
+// Utility Functions
+function parseIntsInArray(inputArray) {
+    for (var i = 0; i < inputArray.length; i++) {
+        var parsedInt = parseInt(inputArray[i]);
+        if (!isNaN(parsedInt)) {
+            inputArray[i] = parsedInt;
+        }
+    }
+}
