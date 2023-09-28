@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 4137.0, 96.0, 1555.0, 762.0 ],
+		"rect" : [ 1687.0, 38.0, 1555.0, 762.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -58,10 +58,10 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 507.0, 240.0, 69.0, 22.0 ],
+					"patching_rect" : [ 507.0, 240.0, 113.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 1.0, 69.0, 22.0 ],
-					"text" : "Selected"
+					"presentation_rect" : [ 0.0, 1.0, 112.0, 22.0 ],
+					"text" : "Selected Buffer"
 				}
 
 			}
@@ -73,10 +73,10 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 507.0, 272.0, 43.0, 22.0 ],
+					"patching_rect" : [ 507.0, 272.0, 97.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 281.0, 1.0, 43.0, 22.0 ],
-					"text" : "Total"
+					"presentation_rect" : [ 320.0, 1.0, 94.0, 22.0 ],
+					"text" : "Total Buffers"
 				}
 
 			}
@@ -116,7 +116,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 353.0, 317.0, 54.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 326.0, 0.0, 54.0, 24.0 ],
+					"presentation_rect" : [ 414.0, 0.0, 54.0, 24.0 ],
 					"triangle" : 0
 				}
 
@@ -158,7 +158,7 @@
 			}
 , 			{
 				"box" : 				{
-					"buffername" : "b4",
+					"buffername" : "b1",
 					"id" : "obj-87",
 					"maxclass" : "waveform~",
 					"numinlets" : 5,
@@ -166,7 +166,7 @@
 					"outlettype" : [ "float", "float", "float", "float", "list", "" ],
 					"patching_rect" : [ 507.0, 57.0, 446.0, 167.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 26.0, 380.0, 185.0 ]
+					"presentation_rect" : [ 0.0, 26.0, 468.0, 206.0 ]
 				}
 
 			}
@@ -186,7 +186,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-288",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -236,7 +236,7 @@
 					"comment" : "Buffer Create / Remove (1, -1)",
 					"hint" : "Buffer Create / Remove (1, -1)",
 					"id" : "obj-283",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -275,7 +275,7 @@
 					"comment" : "Buffer Selection",
 					"hint" : "Buffer Selection",
 					"id" : "obj-217",
-					"index" : 3,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -309,7 +309,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 113.0, 214.0, 209.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 70.0, 0.0, 209.0, 24.0 ]
+					"presentation_rect" : [ 111.0, 0.0, 209.0, 24.0 ]
 				}
 
 			}
@@ -349,7 +349,7 @@
 					"comment" : "Target Buffers",
 					"hint" : "Target Buffers",
 					"id" : "obj-26",
-					"index" : 2,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -548,7 +548,24 @@
 				}
 
 			}
- ]
+ ],
+		"dependency_cache" : [ 			{
+				"name" : "dynamicbuffer.js",
+				"bootpath" : "~/workspace/projects/dualmix/patchers",
+				"patcherrelativepath" : ".",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "o.pack.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "o.union.mxo",
+				"type" : "iLaX"
+			}
+ ],
+		"autosave" : 0
 	}
 
 }
