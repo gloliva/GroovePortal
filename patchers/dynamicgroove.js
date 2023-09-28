@@ -34,6 +34,10 @@ var matrixSizeTemplate = "script|size|groove-matrix|<size>|22";
 var ampMatrixConnectionTemplate = "script|connect|<groove>-amp|0|groove-matrix|<inlet>";
 var matrixOutletConnectionTemplate = "script|connect|groove-matrix|<outlet>|dg-audio-out-<outlet>|0";
 
+// Matrixctrl object
+var matrixctrlSizeTemplate = "script|size|dg-matrixctrl|<size>|144";
+var matrixctrlMatrixConnectionTemplate = "script|connect|dg-matrixctrl|0|groove-matrix|0";
+
 // Misc scripting
 var deleteObjectTemplate = "script|delete|<obj>";
 
@@ -74,6 +78,7 @@ var globalRouteSizeStart = 169;
 var globalRouteSizeIncrease = 150;
 var matrixSizeStart = 194;
 var matrixSizeIncrease = 150;
+var matrixctrlSizeStart = 80;
 
 
 /****************************
@@ -128,9 +133,13 @@ function output() {
         connectSubRouteToGroove(grooveName);
         connectSubRouteToAmp(grooveName);
 
+        // Resize matrixctrl object
+        resizeMatrixctrl();
+
         // Recreate matrix object
         deleteMatrix();
         createMatrix();
+        connectMatrixctrlToMatrix();
         connectAmpsToMatrix();
         connectMatrixToOutlets();
     // Decrease grooves
@@ -156,9 +165,13 @@ function output() {
         // Connect all sub routes to global route
         connectGlobalRouteToSubRoutes();
 
+        // Resize matrixctrl object
+        resizeMatrixctrl();
+
         // Recreate matrix object
         deleteMatrix();
         createMatrix();
+        connectMatrixctrlToMatrix();
         connectAmpsToMatrix();
         connectMatrixToOutlets();
     }
@@ -313,6 +326,26 @@ function deleteMatrix() {
 }
 
 
+/*************************
+**** Resize Functions ****
+**************************/
+function resizeMatrixctrl() {
+    // Resize object
+    var size = matrixctrlSizeStart * numGrooves;
+    var matrixctrlSize = matrixctrlSizeTemplate
+        .replace("<size>", size);
+
+    outMsg = matrixctrlSize.split("|");
+    parseIntsInArray(outMsg);
+    outlet(0, outMsg);
+
+    // Change number of columns
+    outMsg = new Array();
+    outMsg.push("columns", numGrooves);
+    outlet(1, outMsg);
+}
+
+
 /**************************
 **** Connect Functions ****
 ***************************/
@@ -396,6 +429,13 @@ function connectMatrixToOutlets() {
             parseIntsInArray(outMsg);
             outlet(0, outMsg);
     }
+}
+
+
+function connectMatrixctrlToMatrix() {
+    outMsg = matrixctrlMatrixConnectionTemplate.split("|");
+    parseIntsInArray(outMsg);
+    outlet(0, outMsg);
 }
 
 
