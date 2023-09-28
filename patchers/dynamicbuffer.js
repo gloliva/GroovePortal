@@ -76,6 +76,16 @@ function output() {
         deleteBuffer();
 
         numBuffers -= 1;
+
+        // Recreate route object
+        deleteRoute();
+        createRoute();
+        connectInletToRoute();
+        routeOutlets = numBuffers;
+
+        // Connect all buffers to route
+        connectRouteToBuffers();
+
     }
 
     sendUmenuMsg();
