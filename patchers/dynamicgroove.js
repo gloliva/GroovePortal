@@ -12,8 +12,10 @@ autowatch = 1;
 **************************/
 // Route object
 var globalRouteObjectTemplate = "script|newobject|newobj|@text|route <route>|@varname|global-groove-route|@patching_position|<x>|<y>";
+var globalRouteSizeTemplate = "script|size|global-groove-route|<size>|22";
 var inletGlobalRouteConnectionTemplate = "script|connect|target-groove-inlet|0|global-groove-route|0";
 var subRouteObjectTemplate = "script|newobject|newobj|@text|route g1 g2 g3 amp|@varname|<groove>-route|@patching_position|<x>|<y>";
+var subRouteSizeTemplate = "script|size|<groove>-route|119|22";
 var globalRouteSubRouteConnectionTemplate = "script|connect|global-groove-route|<outlet>|<groove>-route|0";
 
 // Groove objects
@@ -21,13 +23,16 @@ var grooveObjectTemplate = "script|newobject|newobj|@text|groove~ <name>|@varnam
 var subRouteGrooveConnectionTemplate = "script|connect|<groove>-route|<outlet>|<groove>|<outlet>";
 
 // Amplitude Multiplication objects
-var grooveAmpObjectTemplate = "script|newobject|newobj|@text|*~ 1.|@varname|<groove>-amp|@fixwidth|1|@patching_position|<x>|<y>";
+var ampObjectTemplate = "script|newobject|newobj|@text|*~ 1.|@varname|<groove>-amp|@fixwidth|1|@patching_position|<x>|<y>";
+var ampSizeTemplate = "script|size|<groove>-amp|94|22";
 var grooveAmpConnectionTemplate = "script|connect|<groove>|0|<groove>-amp|0";
 var subRouteAmpConnectionTemplate = "script|connect|<groove>-route|3|<groove>-amp|1";
 
 // Matrix object
 var matrixObjectTemplate = "script|newobject|newobj|@text|matrix~ <num> 2|@varname|groove-matrix||@patching_position|<x>|<y>";
+var matrixSizeTemplate = "script|size|groove-matrix|<size>|22";
 var ampMatrixConnectionTemplate = "script|connect|<groove>-amp|0|groove-matrix|<inlet>";
+var matrixOutletConnectionTemplate = "script|connect|groove-matrix|<outlet>|dg-audio-out-<outlet>|0";
 
 // Misc scripting
 var deleteObjectTemplate = "script|delete|<obj>";
@@ -37,16 +42,15 @@ var deleteObjectTemplate = "script|delete|<obj>";
 **** Input / Output ****
 ************************/
 var outMsg = new Array();
-
 var grooveChange = 0;
 var numGrooves = 1;
-var globalRouteOutlets = 1;
 
 
 /******************
 **** Constants ****
 *******************/
 var numGrooveInlets = 3;
+var numAudioOutputs = 2;
 
 
 /***************************
@@ -61,6 +65,15 @@ var grooveY = 800;
 var ampY = 850;
 var matrixX = 25;
 var matrixY = 950;
+
+
+/***********************
+**** Size Variables ****
+************************/
+var globalRouteSizeStart = 169;
+var globalRouteSizeIncrease = 150;
+var matrixSizeStart = 194;
+var matrixSizeIncrease = 150;
 
 
 /****************************
@@ -119,6 +132,7 @@ function output() {
         deleteMatrix();
         createMatrix();
         connectAmpsToMatrix();
+        connectMatrixToOutlets();
     // Decrease grooves
     } else if (grooveChange === -1) {
         var grooveName = "g" + numGrooves;
@@ -146,6 +160,7 @@ function output() {
         deleteMatrix();
         createMatrix();
         connectAmpsToMatrix();
+        connectMatrixToOutlets();
     }
 }
 
@@ -154,6 +169,7 @@ function output() {
 **** Create Functions ****
 **************************/
 function createGlobalRoute() {
+    // Create the object
     var routeText = "";
     for (var i = 0; i < numGrooves; i++) {
         routeText = routeText + i + " ";
@@ -166,16 +182,35 @@ function createGlobalRoute() {
 
     outMsg = globalRouteObject.split("|");
     outlet(0, outMsg);
+
+    // Adjust the object size
+    var size = globalRouteSizeStart + (globalRouteSizeIncrease * (numGrooves - 1));
+    var globalRouteSize = globalRouteSizeTemplate
+        .replace("<size>", size);
+
+    outMsg = globalRouteSize.split("|");
+    parseIntsInArray(outMsg);
+    outlet(0, outMsg);
+
 }
 
 
 function createSubRoute(grooveName, groovePosX) {
+    // Create the object
     var subRouteObject = subRouteObjectTemplate
         .replace("<groove>", grooveName)
         .replace("<x>", groovePosX)
         .replace("<y>", subRouteY);
 
     outMsg = subRouteObject.split("|");
+    outlet(0, outMsg);
+
+    // Adjust the object size
+    var subRouteSize = subRouteSizeTemplate
+        .replace("<groove>", grooveName);
+
+    outMsg = subRouteSize.split("|");
+    parseIntsInArray(outMsg);
     outlet(0, outMsg);
 
 }
@@ -194,23 +229,43 @@ function createGroove(grooveName, groovePosX) {
 
 
 function createAmp(grooveName, groovePosX) {
-    var grooveAmpObject = grooveAmpObjectTemplate
+    // Create the object
+    var grooveAmpObject = ampObjectTemplate
         .replace("<groove>", grooveName)
         .replace("<x>", groovePosX)
         .replace("<y>", ampY);
 
     outMsg = grooveAmpObject.split("|");
     outlet(0, outMsg);
+
+    // Adjust the object size
+    var ampSize = ampSizeTemplate
+        .replace("<groove>", grooveName);
+
+    outMsg = ampSize.split("|");
+    parseIntsInArray(outMsg);
+    outlet(0, outMsg);
 }
 
 
 function createMatrix() {
+    // Create the object
     var matrixObject = matrixObjectTemplate
         .replace("<num>", numGrooves)
         .replace("<x>", matrixX)
         .replace("<y>", matrixY);
 
     outMsg = matrixObject.split("|");
+    outlet(0, outMsg);
+
+    // Adjust the object size
+    var multiplier = Math.max(0, (numGrooves - 2))
+    var size = matrixSizeStart + (matrixSizeIncrease * multiplier);
+    var matrixSize = matrixSizeTemplate
+        .replace("<size>", size);
+
+    outMsg = matrixSize.split("|");
+    parseIntsInArray(outMsg);
     outlet(0, outMsg);
 }
 
@@ -325,6 +380,19 @@ function connectAmpsToMatrix() {
             .replace("<inlet>", grooveIdx);
 
             outMsg = ampMatrixConnection.split("|");
+            parseIntsInArray(outMsg);
+            outlet(0, outMsg);
+    }
+}
+
+
+function connectMatrixToOutlets() {
+    for (var audioOut = 0; audioOut < numAudioOutputs; audioOut++){
+        var matrixOutletConnection = matrixOutletConnectionTemplate
+            .replace("<outlet>", audioOut)
+            .replace("<outlet>", audioOut);
+
+            outMsg = matrixOutletConnection.split("|");
             parseIntsInArray(outMsg);
             outlet(0, outMsg);
     }
