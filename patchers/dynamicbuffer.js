@@ -7,14 +7,18 @@ inlets = 1;
 outlets = 2;
 autowatch = 1;
 
-// Formatted strings
+/*************************
+**** String Templates ****
+**************************/
 var routeObjectTemplate = "script|newobject|newobj|@text|route <route>|@varname|buffer-route|@patching_position|<x>|<y>";
 var inletRouteConnectionTemplate = "script|connect|route-inlet|0|buffer-route|0";
 var bufferObjectTemplate = "script|newobject|newobj|@text|buffer~ <name>|@varname|<name>|@fixwidth|1|@patching_position|<x>|<y>";
 var routeBufferConnectionTemplate = "script|connect|buffer-route|<outlet>|<buffer>|0";
 var deleteObjectTemplate = "script|delete|<obj>";
 
-// Input / Output variables
+/***********************
+**** Input / Output ****
+************************/
 var outMsg = new Array();
 
 var bufferChange = 0;
