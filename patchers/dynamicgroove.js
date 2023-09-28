@@ -27,7 +27,7 @@ var subRouteAmpConnectionTemplate = "script|connect|<groove>-route|3|<groove>-am
 
 // Matrix object
 var matrixObjectTemplate = "script|newobject|newobj|@text|matrix~ <num> 2|@varname|groove-matrix||@patching_position|<x>|<y>";
-var grooveAmpMatrixConnectionTemplate = "script|connect|<groove>|"
+var ampMatrixConnectionTemplate = "script|connect|<groove>-amp|0|groove-matrix|<inlet>";
 
 // Misc scripting
 var deleteObjectTemplate = "script|delete|<obj>";
@@ -59,7 +59,8 @@ var globalRouteY = 650;
 var subRouteY = 750;
 var grooveY = 800;
 var ampY = 850;
-var matrixY = 1000;
+var matrixX = 25;
+var matrixY = 950;
 
 
 /****************************
@@ -113,6 +114,11 @@ function output() {
         connectGrooveToAmp(grooveName);
         connectSubRouteToGroove(grooveName);
         connectSubRouteToAmp(grooveName);
+
+        // Recreate matrix object
+        deleteMatrix();
+        createMatrix();
+        connectAmpsToMatrix();
     // Decrease grooves
     } else if (grooveChange === -1) {
         var grooveName = "g" + numGrooves;
@@ -135,6 +141,11 @@ function output() {
 
         // Connect all sub routes to global route
         connectGlobalRouteToSubRoutes();
+
+        // Recreate matrix object
+        deleteMatrix();
+        createMatrix();
+        connectAmpsToMatrix();
     }
 }
 
@@ -193,6 +204,17 @@ function createAmp(grooveName, groovePosX) {
 }
 
 
+function createMatrix() {
+    var matrixObject = matrixObjectTemplate
+        .replace("<num>", numGrooves)
+        .replace("<x>", matrixX)
+        .replace("<y>", matrixY);
+
+    outMsg = matrixObject.split("|");
+    outlet(0, outMsg);
+}
+
+
 /*************************
 **** Delete Functions ****
 **************************/
@@ -223,6 +245,14 @@ function deleteSubRoute(grooveName) {
 function deleteAmp(grooveName) {
     var deleteObject = deleteObjectTemplate
         .replace("<obj>", grooveName + "-amp");
+    outMsg = deleteObject.split("|");
+    outlet(0, outMsg);
+}
+
+
+function deleteMatrix() {
+    var deleteObject = deleteObjectTemplate
+        .replace("<obj>", "groove-matrix");
     outMsg = deleteObject.split("|");
     outlet(0, outMsg);
 }
@@ -285,6 +315,19 @@ function connectSubRouteToAmp(grooveName) {
         outMsg = subRouteAmpConnection.split("|");
         parseIntsInArray(outMsg);
         outlet(0, outMsg);
+}
+
+
+function connectAmpsToMatrix() {
+    for (var grooveIdx = 0; grooveIdx < numGrooves; grooveIdx++) {
+        var ampMatrixConnection = ampMatrixConnectionTemplate
+            .replace("<groove>", "g" + (grooveIdx + 1))
+            .replace("<inlet>", grooveIdx);
+
+            outMsg = ampMatrixConnection.split("|");
+            parseIntsInArray(outMsg);
+            outlet(0, outMsg);
+    }
 }
 
 
