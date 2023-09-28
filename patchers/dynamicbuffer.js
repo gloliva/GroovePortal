@@ -21,6 +21,13 @@ var bufferChange = 0;
 var numBuffers = 1;
 var routeOutlets = 1;
 
+// Position Constants
+var routeX = 25;
+var routeY = 650;
+var bufferXOffset = 25;
+var bufferSpacing = 75;
+var bufferY = 700;
+
 
 function msg_int(i) {
     if (i > 0) {
@@ -83,8 +90,8 @@ function createRoute() {
 
     var routeObjectReplace = routeObjectTemplate
         .replace("<route>", routeText.trim())
-        .replace("<x>", 50)
-        .replace("<y>", 100);
+        .replace("<x>", routeX)
+        .replace("<y>", routeY);
     outMsg = routeObjectReplace.split("|");
     outlet(0, outMsg);
 }
@@ -108,12 +115,12 @@ function connectInletToRoute() {
 
 function createBuffer() {
     var bufferName = "b" + numBuffers;
-    var xPos = 50 + (75 * (numBuffers - 1));
+    var xPos = bufferXOffset + (bufferSpacing * (numBuffers - 1));
     var bufferObjectReplace = bufferObjectTemplate
         .replace("<name>", bufferName)
         .replace("<name>", bufferName)
         .replace("<x>", xPos)
-        .replace("<y>", 150);
+        .replace("<y>", bufferY);
 
     outMsg = bufferObjectReplace.split("|");
     outlet(0, outMsg);
