@@ -19,7 +19,7 @@ var subRouteSizeTemplate = "script|size|<groove>-route|144|22";
 var globalRouteSubRouteConnectionTemplate = "script|connect|global-groove-route|<outlet>|<groove>-route|0";
 
 // Groove objects
-var grooveObjectTemplate = "script|newobject|newobj|@text|groove~ <name>|@varname|<name>|@fixwidth|1|@patching_position|<x>|<y>";
+var grooveObjectTemplate = "script|newobject|newobj|@text|groove~ <buffer>|@varname|<groove>|@fixwidth|1|@patching_position|<x>|<y>";
 var subRouteGrooveConnectionTemplate = "script|connect|<groove>-route|<outlet>|<groove>|<outlet>";
 
 // Sig objects
@@ -258,9 +258,10 @@ function createSig(grooveName) {
 
 
 function createGroove(grooveName, groovePosX) {
+    var bufferName = "b" + numGrooves;
     var grooveObject = grooveObjectTemplate
-        .replace("<name>", grooveName)
-        .replace("<name>", grooveName)
+        .replace("<buffer>", bufferName)
+        .replace("<groove>", grooveName)
         .replace("<x>", groovePosX)
         .replace("<y>", grooveY);
 
