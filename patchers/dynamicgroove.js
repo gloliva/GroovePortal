@@ -14,19 +14,24 @@ autowatch = 1;
 var globalRouteObjectTemplate = "script|newobject|newobj|@text|route <route>|@varname|global-groove-route|@patching_position|<x>|<y>";
 var globalRouteSizeTemplate = "script|size|global-groove-route|<size>|22";
 var inletGlobalRouteConnectionTemplate = "script|connect|target-groove-inlet|0|global-groove-route|0";
-var subRouteObjectTemplate = "script|newobject|newobj|@text|route g1 g2 g3 amp|@varname|<groove>-route|@patching_position|<x>|<y>";
-var subRouteSizeTemplate = "script|size|<groove>-route|119|22";
+var subRouteObjectTemplate = "script|newobject|newobj|@text|route g1 g2 g3 sig amp|@varname|<groove>-route|@patching_position|<x>|<y>";
+var subRouteSizeTemplate = "script|size|<groove>-route|144|22";
 var globalRouteSubRouteConnectionTemplate = "script|connect|global-groove-route|<outlet>|<groove>-route|0";
 
 // Groove objects
 var grooveObjectTemplate = "script|newobject|newobj|@text|groove~ <name>|@varname|<name>|@fixwidth|1|@patching_position|<x>|<y>";
 var subRouteGrooveConnectionTemplate = "script|connect|<groove>-route|<outlet>|<groove>|<outlet>";
 
+// Sig objects
+var sigObjectTemplate = "script|newobject|newobj|@text|sig~ 1.|@varname|<groove>-sig|@fixwidth|1|@patching_position|<x>|<y>";
+var subRouteSigConnectionTemplate = "script|connect|<groove>-route|3|<groove>-sig|0";
+var sigGrooveConnectionTemplate = "script|connect|<groove>-sig|0|<groove>|0";
+
 // Amplitude Multiplication objects
 var ampObjectTemplate = "script|newobject|newobj|@text|*~ 1.|@varname|<groove>-amp|@fixwidth|1|@patching_position|<x>|<y>";
-var ampSizeTemplate = "script|size|<groove>-amp|94|22";
+var ampSizeTemplate = "script|size|<groove>-amp|119|22";
 var grooveAmpConnectionTemplate = "script|connect|<groove>|0|<groove>-amp|0";
-var subRouteAmpConnectionTemplate = "script|connect|<groove>-route|3|<groove>-amp|1";
+var subRouteAmpConnectionTemplate = "script|connect|<groove>-route|4|<groove>-amp|1";
 
 // Matrix object
 var matrixObjectTemplate = "script|newobject|newobj|@text|matrix~ <num> 2|@varname|groove-matrix||@patching_position|<x>|<y>";
@@ -64,9 +69,11 @@ var objectOffsetX = 50;
 var objectSpacingX = 150;
 var globalRouteX = 50;
 var globalRouteY = 650;
-var subRouteY = 750;
-var grooveY = 800;
-var ampY = 850;
+var subRouteY = 725;
+var sigOffsetX = 125;
+var sigY = 775;
+var grooveY = 825;
+var ampY = 875;
 var matrixX = 25;
 var matrixY = 950;
 
@@ -126,12 +133,17 @@ function output() {
         createSubRoute(grooveName, groovePosX);
         connectGlobalRouteToSubRoutes();
 
+        // Create sig
+        createSig(grooveName);
+        connectSubRouteToSig(grooveName);
+
         // Create groove objects
         createGroove(grooveName, groovePosX);
         createAmp(grooveName, groovePosX);
         connectGrooveToAmp(grooveName);
         connectSubRouteToGroove(grooveName);
         connectSubRouteToAmp(grooveName);
+        connectSigToGroove(grooveName);
 
         // Resize matrixctrl object
         resizeMatrixctrl();
@@ -151,6 +163,9 @@ function output() {
 
         // Remove last subroute
         deleteSubRoute(grooveName);
+
+        // Remove last sig
+        deleteSig(grooveName);
 
         // Remove last amp
         deleteAmp(grooveName);
@@ -224,6 +239,19 @@ function createSubRoute(grooveName, groovePosX) {
 
     outMsg = subRouteSize.split("|");
     parseIntsInArray(outMsg);
+    outlet(0, outMsg);
+
+}
+
+
+function createSig(grooveName) {
+    var sigX = sigOffsetX + (objectSpacingX * (numGrooves - 1));
+    var sigObject = sigObjectTemplate
+        .replace("<groove>", grooveName)
+        .replace("<x>", sigX)
+        .replace("<y>", sigY);
+
+    outMsg = sigObject.split("|");
     outlet(0, outMsg);
 
 }
@@ -310,6 +338,14 @@ function deleteSubRoute(grooveName) {
 }
 
 
+function deleteSig(grooveName) {
+    var deleteObject = deleteObjectTemplate
+        .replace("<obj>", grooveName + "-sig");
+    outMsg = deleteObject.split("|");
+    outlet(0, outMsg);
+}
+
+
 function deleteAmp(grooveName) {
     var deleteObject = deleteObjectTemplate
         .replace("<obj>", grooveName + "-amp");
@@ -343,6 +379,11 @@ function resizeMatrixctrl() {
     outMsg = new Array();
     outMsg.push("columns", numGrooves);
     outlet(1, outMsg);
+
+    // Change presentation rect and size
+    outMsg = new Array();
+    outMsg.push("presentation_rect", 0, 23, size, 144);
+    outlet(1, outMsg);
 }
 
 
@@ -366,6 +407,17 @@ function connectGlobalRouteToSubRoutes() {
         parseIntsInArray(outMsg);
         outlet(0, outMsg);
     }
+}
+
+
+function connectSubRouteToSig(grooveName) {
+    var subRouteSigConnection = subRouteSigConnectionTemplate
+        .replace("<groove>", grooveName)
+        .replace("<groove>", grooveName);
+
+        outMsg = subRouteSigConnection.split("|");
+        parseIntsInArray(outMsg);
+        outlet(0, outMsg);
 }
 
 
@@ -401,6 +453,17 @@ function connectSubRouteToAmp(grooveName) {
         .replace("<groove>", grooveName);
 
         outMsg = subRouteAmpConnection.split("|");
+        parseIntsInArray(outMsg);
+        outlet(0, outMsg);
+}
+
+
+function connectSigToGroove(grooveName) {
+    var sigGrooveConnection = sigGrooveConnectionTemplate
+        .replace("<groove>", grooveName)
+        .replace("<groove>", grooveName);
+
+        outMsg = sigGrooveConnection.split("|");
         parseIntsInArray(outMsg);
         outlet(0, outMsg);
 }

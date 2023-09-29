@@ -10,9 +10,9 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 4034.0, -11.0, 1558.0, 959.0 ],
+		"rect" : [ 4034.0, -11.0, 1561.0, 959.0 ],
 		"bglocked" : 0,
-		"openinpresentation" : 0,
+		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
 		"default_fontface" : 0,
 		"default_fontname" : "Arial",
@@ -40,11 +40,121 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-2",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "signal" ],
+					"patching_rect" : [ 125.0, 775.0, 44.0, 22.0 ],
+					"text" : "sig~ 1.",
+					"varname" : "g1-sig"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 1,
+					"fontsize" : 14.0,
+					"id" : "obj-1510",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 134.5, 179.0, 102.0, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 0.0, 0.0, 102.0, 22.0 ],
+					"text" : "Total Grooves"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-1508",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 238.5, 142.0, 84.0, 22.0 ],
+					"text" : "route columns"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-1507",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 120.0, 106.0, 137.5, 22.0 ],
+					"text" : "t l l"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"cantchange" : 1,
+					"id" : "obj-1506",
+					"maxclass" : "number",
+					"minimum" : 1,
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 238.5, 179.0, 50.0, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 102.0, 0.0, 50.0, 22.0 ],
+					"triangle" : 0
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-1504",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 351.0, 106.0, 84.0, 22.0 ],
+					"text" : "s #0-matrixctrl"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"annotation" : "Matrixctl Messages",
+					"comment" : "Matrixctl Messages",
+					"hint" : "Matrixctl Messages",
+					"id" : "obj-1503",
+					"index" : 0,
+					"maxclass" : "inlet",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 351.0, 20.0, 30.0, 30.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"annotation" : "Groove Create / Remove (1, -1)",
+					"comment" : "Groove Create / Remove (1, -1)",
+					"hint" : "Groove Create / Remove (1, -1)",
+					"id" : "obj-1502",
+					"index" : 0,
+					"maxclass" : "inlet",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 25.0, 20.0, 30.0, 30.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-1347",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 120.0, 213.0, 84.0, 22.0 ],
+					"patching_rect" : [ 120.0, 142.0, 84.0, 22.0 ],
 					"text" : "s #0-matrixctrl"
 				}
 
@@ -63,18 +173,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-1345",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 488.0, 152.0, 171.0, 22.0 ],
-					"text" : "script size dg-matrixctrl 80 144"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"bgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"color" : [ 0.905882352941176, 0.086274509803922, 0.086274509803922, 1.0 ],
 					"columns" : 1,
@@ -87,6 +185,8 @@
 					"outlettype" : [ "list", "list" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 25.0, 380.0, 80.0, 144.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 0.0, 23.0, 80.0, 144.0 ],
 					"rows" : 2,
 					"varname" : "dg-matrixctrl",
 					"verticalmargin" : 0
@@ -125,48 +225,12 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-8",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 78.0, 34.0, 29.5, 22.0 ],
-					"text" : "-1"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-7",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 25.0, 34.0, 29.5, 22.0 ],
-					"text" : "1"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-5",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 220.0, 91.0, 50.0, 22.0 ],
-					"text" : "compile"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-10",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 50.0, 850.0, 94.0, 22.0 ],
+					"patching_rect" : [ 50.0, 875.0, 119.0, 22.0 ],
 					"text" : "*~ 1.",
 					"varname" : "g1-amp"
 				}
@@ -176,11 +240,11 @@
 				"box" : 				{
 					"id" : "obj-4",
 					"maxclass" : "newobj",
-					"numinlets" : 5,
-					"numoutlets" : 5,
-					"outlettype" : [ "", "", "", "", "" ],
-					"patching_rect" : [ 50.0, 750.0, 119.0, 22.0 ],
-					"text" : "route g1 g2 g3 amp",
+					"numinlets" : 6,
+					"numoutlets" : 6,
+					"outlettype" : [ "", "", "", "", "", "" ],
+					"patching_rect" : [ 50.0, 725.0, 144.0, 22.0 ],
+					"text" : "route g1 g2 g3 sig amp",
 					"varname" : "g1-route"
 				}
 
@@ -192,7 +256,7 @@
 					"numinlets" : 3,
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "signal" ],
-					"patching_rect" : [ 50.0, 800.0, 69.0, 22.0 ],
+					"patching_rect" : [ 50.0, 825.0, 69.0, 22.0 ],
 					"text" : "groove~ b1",
 					"varname" : "g1"
 				}
@@ -221,7 +285,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 25.0, 177.0, 114.0, 22.0 ],
+					"patching_rect" : [ 25.0, 70.0, 114.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"filename" : "dynamicgroove.js",
 						"parameter_enable" : 0
@@ -238,7 +302,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 25.0, 213.0, 67.0, 22.0 ],
+					"patching_rect" : [ 25.0, 106.0, 67.0, 22.0 ],
 					"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
 					"text" : "thispatcher"
 				}
@@ -280,13 +344,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-1", 0 ],
-					"source" : [ "obj-1345", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-22", 0 ],
 					"source" : [ "obj-1346", 0 ]
 				}
@@ -322,6 +379,48 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-3", 0 ],
+					"source" : [ "obj-1502", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1504", 0 ],
+					"source" : [ "obj-1503", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1347", 0 ],
+					"source" : [ "obj-1507", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1508", 0 ],
+					"source" : [ "obj-1507", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1506", 0 ],
+					"source" : [ "obj-1508", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-137", 0 ],
+					"source" : [ "obj-2", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-1501", 0 ],
 					"source" : [ "obj-22", 0 ]
 				}
@@ -343,7 +442,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-1347", 0 ],
+					"destination" : [ "obj-1507", 0 ],
 					"source" : [ "obj-3", 1 ]
 				}
 
@@ -351,7 +450,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-10", 1 ],
-					"source" : [ "obj-4", 3 ]
+					"source" : [ "obj-4", 4 ]
 				}
 
 			}
@@ -378,22 +477,8 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-3", 0 ],
-					"source" : [ "obj-5", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-3", 0 ],
-					"source" : [ "obj-7", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-3", 0 ],
-					"source" : [ "obj-8", 0 ]
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-4", 3 ]
 				}
 
 			}
