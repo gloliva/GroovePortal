@@ -173,3 +173,14 @@ function sendUmenuMsg() {
     outlet(1, umenuMsg);
     outlet(1, "count");
 }
+
+
+// Utility Functions
+function parseIntsInArray(inputArray) {
+    for (var i = 0; i < inputArray.length; i++) {
+        var parsedInt = parseInt(inputArray[i]);
+        if (!isNaN(parsedInt)) {
+            inputArray[i] = parsedInt;
+        }
+    }
+}
