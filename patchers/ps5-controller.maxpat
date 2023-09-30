@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 4034.0, -11.0, 1852.0, 959.0 ],
+		"rect" : [ 1827.0, -62.0, 1852.0, 959.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -229,7 +229,6 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-12",
@@ -2002,6 +2001,7 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
+						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-58",
@@ -2024,7 +2024,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "FullPacket", "FullPacket" ],
 									"patching_rect" : [ 343.933333333333621, 141.5, 174.0, 211.0 ],
-									"text" : "/horizontal = scale(\n  /h, \n  0, 255, \n  0., 1.\n),\n/vertical = scale(\n  /v, \n  0, 255, \n  0., 1.\n),\n\n/joystick/R/position = [\n  /horizontal,\n  /vertical\n]"
+									"text" : "/horizontal = scale(\n  /h, \n  0, 255, \n  -1., 1.\n),\n/vertical = scale(\n  /v, \n  0, 255, \n  -1., 1.\n),\n\n/joystick/R/position = [\n  /horizontal,\n  /vertical\n]"
 								}
 
 							}
@@ -2062,7 +2062,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "FullPacket", "FullPacket" ],
 									"patching_rect" : [ 50.0, 141.5, 170.400000000000091, 211.0 ],
-									"text" : "/horizontal = scale(\n  /h, \n  0, 255, \n  0., 1.\n),\n/vertical = scale(\n  /v, \n  0, 255, \n  0., 1.\n),\n\n/joystick/L/position = [\n  /horizontal,\n  /vertical\n]"
+									"text" : "/horizontal = scale(\n  /h, \n  0, 255, \n  -1., 1.\n),\n/vertical = scale(\n  /v, \n  0, 255, \n  -1., 1.\n),\n\n/joystick/L/position = [\n  /horizontal,\n  /vertical\n]"
 								}
 
 							}
@@ -2257,7 +2257,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-7",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -3439,7 +3439,43 @@
 				}
 
 			}
- ]
+ ],
+		"dependency_cache" : [ 			{
+				"name" : "dsc.ds5.usb.maxpat",
+				"bootpath" : "~/Music/Max Patches",
+				"patcherrelativepath" : "../../../../Music/Max Patches",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "o.accum.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/odot/patchers/namespace",
+				"patcherrelativepath" : "../../../../Documents/Max 8/Packages/odot/patchers/namespace",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "o.expr.codebox.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "o.flatten.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "o.pack.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "o.select.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "o.union.mxo",
+				"type" : "iLaX"
+			}
+ ],
+		"autosave" : 0
 	}
 
 }
