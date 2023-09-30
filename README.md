@@ -1,3 +1,3 @@
-# DualMIX
+# Groove Portal
 
-Interactive DJ Tool utilizing a PS5 Controller
+Multi-Dimensional Audio Mixer and Performance Tool
