@@ -254,7 +254,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 4197.0, 36.0, 1615.0, 959.0 ],
+						"rect" : [ 4124.0, 0.0, 1321.0, 959.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -282,6 +282,7 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
+						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-2",
@@ -289,7 +290,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "FullPacket" ],
-									"patching_rect" : [ 715.25, 566.0, 73.0, 22.0 ],
+									"patching_rect" : [ 715.25, 646.0, 73.0, 22.0 ],
 									"text" : "o.union"
 								}
 
@@ -301,7 +302,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "FullPacket" ],
-									"patching_rect" : [ 715.25, 532.0, 126.0, 22.0 ],
+									"patching_rect" : [ 715.25, 612.0, 126.0, 22.0 ],
 									"text" : "o.select /layer /update"
 								}
 
@@ -386,7 +387,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "FullPacket", "FullPacket" ],
 									"patching_rect" : [ 19.25, 339.0, 526.0, 287.0 ],
-									"text" : "# Handle Layer Pop\n/msg/pop = [\"pop\"],\n\n/layer/num -= 1,\n\nmap(\n  lambda(\n    [idx],\n    if (strchar(idx, /layer/prefix) == \"[\",\n      /last_bracket = idx\n    )\n  ),\n  aseq(0, strlen(/layer/prefix) -2)\n),\n\nif (/last_bracket == 0,\n  /layer/prefix = \"\",\n  /layer/prefix = strchar(aseq(0, /last_bracket - 1, 1), /layer/prefix)\n),\n\n/update = 1"
+									"text" : "# Handle Layer Pop\n/msg/pop = [\"pop\"],\n\n/layer/num -= 1,\n\nmap(\n  lambda(\n    [idx],\n    if (strchar(idx, /layer/prefix) == \"[\",\n      /last_bracket = idx\n    )\n  ),\n  aseq(0, strlen(/layer/prefix) - 2)\n),\n\nif (/last_bracket == 0,\n  /layer/prefix = \"\",\n  /layer/prefix = strchar(aseq(0, /last_bracket - 1, 1), /layer/prefix)\n),\n\n/update = 1"
 								}
 
 							}
@@ -396,7 +397,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 715.25, 600.0, 101.0, 22.0 ],
+									"patching_rect" : [ 715.25, 680.0, 101.0, 22.0 ],
 									"text" : "s layer-properties"
 								}
 
@@ -419,7 +420,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 563.25, 566.0, 93.0, 22.0 ],
+									"patching_rect" : [ 563.25, 646.0, 93.0, 22.0 ],
 									"text" : "s rbfi-messages"
 								}
 
@@ -431,7 +432,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "FullPacket" ],
-									"patching_rect" : [ 563.25, 532.0, 119.0, 22.0 ],
+									"patching_rect" : [ 563.25, 612.0, 119.0, 22.0 ],
 									"text" : "o.route /create /push"
 								}
 
@@ -443,7 +444,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "FullPacket" ],
-									"patching_rect" : [ 563.25, 497.0, 171.0, 22.0 ],
+									"patching_rect" : [ 563.25, 577.0, 171.0, 22.0 ],
 									"text" : "o.route /msg"
 								}
 
@@ -452,13 +453,13 @@
 								"box" : 								{
 									"fontface" : 0,
 									"id" : "obj-8",
-									"linecount" : 10,
+									"linecount" : 16,
 									"maxclass" : "o.expr.codebox",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "FullPacket", "FullPacket" ],
-									"patching_rect" : [ 563.25, 339.0, 745.0, 147.0 ],
-									"text" : "# Handle Layer Push\n/msg/push = [\"push\", /point/name],\n\n/layer/num += 1,\n/layer/prefix = /layer/prefix + \"[\" + /point/name + \"]\",\n\n/msg/create = [\"add_point\", \"name\", /layer/prefix, \"coords\", /point/coords, \"rgb\", /point/rgb, \"inner_radius\", /point/inner_radius, \"outer_radius\", /point/outer_radius],\n\n/update = 1"
+									"patching_rect" : [ 563.25, 339.0, 745.0, 223.0 ],
+									"text" : "# Handle Layer Push\n/msg/push = [\"push\", /point/name],\n\n/layer/num += 1,\n\nif (/layer/prefix == \"\",\n  /name = /point/name,\n  /name = strchar([strlen(/layer/prefix), strlen(/point/name) - 1], /point/name)\n),\n\n/layer/prefix = /layer/prefix + \"[\" + /name + \"]\",\n\n/msg/create = [\"add_point\", \"name\", /layer/prefix, \"coords\", /point/coords, \"rgb\", /point/rgb, \"inner_radius\", /point/inner_radius, \"outer_radius\", /point/outer_radius],\n\n/update = 1"
 								}
 
 							}
@@ -593,7 +594,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-11", 0 ],
-									"midpoints" : [ 622.75, 559.5, 572.75, 559.5 ],
+									"midpoints" : [ 622.75, 639.5, 572.75, 639.5 ],
 									"source" : [ "obj-10", 1 ]
 								}
 
@@ -5313,7 +5314,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1998.0, 831.5, 93.0, 22.0 ],
+					"patching_rect" : [ 1998.0, 820.0, 93.0, 22.0 ],
 					"text" : "s rbfi-messages"
 				}
 
@@ -5417,7 +5418,7 @@
 , 			{
 				"box" : 				{
 					"always_draw_circles" : 25573678389395457,
-					"always_draw_labels" : 21480790816,
+					"always_draw_labels" : 47250594592,
 					"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"font_size" : 12,
 					"fontface" : 0,
@@ -5432,7 +5433,7 @@
 					"patching_rect" : [ 603.0, 162.0, 363.0, 363.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 124.0, 231.0, 848.0, 848.0 ],
-					"spaces" : [ "space", 2, 0.294860243880517, 0.443213462802184, "b3", 0.75, 0.5625, 0.1875, 0.0, 3.321928094887362, 152018.920102754986146, 0.05, 0.2, 0, "space", 2, 0.294860243880517, 0.443213462802184, "[b3]", 0.75, 0.5625, 0.1875, 1.0, 3.321928094887362, 152018.920102754986146, 0.05, 0.2, 0, 0.806657287095071, 0.733514653507629, "[b3]b1", 0.375, 0.75, 0.1875, 0.0, 3.321928094887362, 152018.920102754986146, 0.05, 0.2, 0, 0.734034380248827, 0.183073406175826, "b1", 0.75, 0.75, 0.1875, 0.0, 3.321928094887362, 152018.920102754986146, 0.05, 0.2, 0 ],
+					"spaces" : [ "space", 1, 0.168967889150045, 0.304220856116081, "b1", 0.75, 0.375, 0.1875, 0.0, 3.321928094887362, 152018.920102754986146, 0.05, 0.2, 0, "space", 2, 0.168967889150045, 0.304220856116081, "[b1]", 0.75, 0.375, 0.1875, 1.0, 3.321928094887362, 152018.920102754986146, 0.05, 0.2, 0, 0.622366202528291, 0.47249439699556, "[b1]b2", 0.75, 0.75, 0.1875, 0.0, 3.321928094887362, 152018.920102754986146, 0.05, 0.2, 0, "space", 4, 0.622366202528291, 0.47249439699556, "[b1][b2]", 0.75, 0.75, 0.1875, 1.0, 3.321928094887362, 152018.920102754986146, 0.05, 0.2, 0, 0.200238969162153, 0.567393072099532, "[b1][b2]b1", 0.375, 0.75, 0.1875, 0.0, 3.321928094887362, 152018.920102754986146, 0.05, 0.2, 0, 0.210576586351891, 0.093918222540433, "[b1][b2]b3", 0.1875, 0.75, 0.5625, 0.0, 3.321928094887362, 152018.920102754986146, 0.05, 0.2, 0, 0.731434748364611, 0.095630156804483, "[b1][b2]b2", 0.1875, 0.75, 0.75, 0.0, 3.321928094887362, 152018.920102754986146, 0.05, 0.2, 0 ],
 					"xhaircolor" : [ 0.999995052814484, 1.0, 1.0, 1.0 ]
 				}
 
@@ -5493,7 +5494,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "FullPacket", "FullPacket" ],
-					"patching_rect" : [ 1764.0, 367.0, 317.0, 31.0 ],
+					"patching_rect" : [ 1764.0, 361.0, 146.0, 37.0 ],
 					"text" : "/position = [/x, /y]"
 				}
 
@@ -5507,7 +5508,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1764.0, 484.0, 231.0, 33.0 ],
-					"text" : "/position : [0.722877, 0.267126]"
+					"text" : "/position : [0.153995, 0.318837]"
 				}
 
 			}
@@ -5724,7 +5725,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 89.0, 718.0, 470.0, 302.0 ],
-					"text" : "/controller/joystick/R/position : [-0.00392157, 0.0117647],\n/controller/joystick/L/position : [0.0117647, -0.027451],\n/controller/button/circle : 0,\n/controller/button/x : 0,\n/controller/button/square : 0,\n/controller/dpad/N : 0,\n/controller/dpad/NE : 0,\n/controller/dpad/E : 0,\n/controller/dpad/SE : 0,\n/controller/dpad/S : 0,\n/controller/dpad/SW : 0,\n/controller/dpad/W : 0,\n/controller/dpad/NW : 0,\n/controller/button/triangle : 0,\n/controller/joystick/R3 : 0,\n/controller/trigger/R1 : 0,\n/controller/trigger/L1 : 0,\n/controller/joystick/L3 : 0,\n/controller/trigger/R2/active : 0,\n/controller/trigger/R2/pressure : 0,\n/controller/trigger/L2/active : 0,\n/controller/trigger/L2/pressure : 0"
+					"text" : "/controller/joystick/R/position : [0.0117647, 0.0117647],\n/controller/joystick/L/position : [0.0117647, -0.0431373],\n/controller/button/circle : 0,\n/controller/button/x : 0,\n/controller/button/square : 0,\n/controller/dpad/N : 0,\n/controller/dpad/NE : 0,\n/controller/dpad/E : 0,\n/controller/dpad/SE : 0,\n/controller/dpad/S : 0,\n/controller/dpad/SW : 0,\n/controller/dpad/W : 0,\n/controller/dpad/NW : 0,\n/controller/button/triangle : 0,\n/controller/joystick/R3 : 0,\n/controller/trigger/R1 : 0,\n/controller/trigger/L1 : 0,\n/controller/joystick/L3 : 0,\n/controller/trigger/R2/active : 0,\n/controller/trigger/R2/pressure : 0,\n/controller/trigger/L2/active : 0,\n/controller/trigger/L2/pressure : 0"
 				}
 
 			}
