@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 1474.0, -211.0, 2492.0, 1319.0 ],
+		"rect" : [ 1474.0, -211.0, 2201.0, 1319.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -45,7 +45,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 862.5, 46.0, 51.0, 22.0 ],
+					"patching_rect" : [ 868.0, 46.0, 51.0, 22.0 ],
 					"text" : "push b3"
 				}
 
@@ -155,7 +155,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 2025.0, -82.0, 1615.0, 1042.0 ],
+						"rect" : [ 4200.0, 3.0, 1615.0, 959.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -647,7 +647,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 770.0, 958.5, 349.0, 110.0 ],
-					"text" : "/point/name : \"b3\",\n/point/coords : [0.628434, 0.43031],\n/point/rgb : [0.1875, 0.75, 0.5625],\n/point/inner_radius : 0.05,\n/point/outer_radius : 0.2,\n/layer/num : 0,\n/layer/prefix : \"\""
+					"text" : "/point/name : \"b1\",\n/point/coords : [0.357534, 0.252435],\n/point/rgb : [0.5625, 0.1875, 0.75],\n/point/inner_radius : 0.05,\n/point/outer_radius : 0.2,\n/layer/num : 0,\n/layer/prefix : \"\""
 				}
 
 			}
@@ -1795,7 +1795,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 788.5, 712.0, 107.0, 22.0 ],
+					"patching_rect" : [ 788.5, 712.0, 88.5, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -1875,6 +1875,7 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
+						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-11",
@@ -2458,7 +2459,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1277.5, 178.0, 288.0, 110.0 ],
-					"text" : "/point/name : \"b3\",\n/point/coords : [0.628434, 0.43031],\n/point/rgb : [0.1875, 0.75, 0.5625],\n/point/inner_radius : 0.05,\n/point/outer_radius : 0.2,\n/layer/num : 0,\n/layer/prefix : \"\""
+					"text" : "/point/name : \"b1\",\n/point/coords : [0.357534, 0.252435],\n/point/rgb : [0.5625, 0.1875, 0.75],\n/point/inner_radius : 0.05,\n/point/outer_radius : 0.2,\n/layer/num : 0,\n/layer/prefix : \"\""
 				}
 
 			}
@@ -5265,7 +5266,7 @@
 , 			{
 				"box" : 				{
 					"always_draw_circles" : 25573678389395457,
-					"always_draw_labels" : 42955627296,
+					"always_draw_labels" : 73020398368,
 					"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"font_size" : 12,
 					"fontface" : 0,
@@ -5280,7 +5281,7 @@
 					"patching_rect" : [ 603.0, 162.0, 363.0, 363.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 124.0, 231.0, 848.0, 848.0 ],
-					"spaces" : [ "space", 2, 0.628434199076359, 0.430309732155103, "b3", 0.1875, 0.75, 0.5625, 0.0, 3.321928094887362, 152018.920102754986146, 0.05, 0.2, 0, "space", 1, 0.628434199076359, 0.430309732155103, "[b3]", 0.1875, 0.75, 0.5625, 1.0, 3.321928094887362, 152018.920102754986146, 0.05, 0.2, 0, 0.115167659298934, 0.845168777217422, "b1", 0.1875, 0.75, 0.75, 0.0, 3.321928094887362, 152018.920102754986146, 0.05, 0.2, 0, "space", 0 ],
+					"spaces" : [ "space", 2, 0.494737091312584, 0.612727354786018, "b3", 0.1875, 0.1875, 0.75, 0.0, 3.321928094887362, 152018.920102754986146, 0.05, 0.2, 0, "space", 1, 0.494737091312584, 0.612727354786018, "[b3]", 0.1875, 0.1875, 0.75, 1.0, 3.321928094887362, 152018.920102754986146, 0.05, 0.2, 0, 0.357533520873852, 0.252435301620683, "b1", 0.5625, 0.1875, 0.75, 0.0, 3.321928094887362, 152018.920102754986146, 0.05, 0.2, 0, "space", 1, 0.357533520873852, 0.252435301620683, "[b1]", 0.5625, 0.1875, 0.75, 1.0, 3.321928094887362, 152018.920102754986146, 0.05, 0.2, 0 ],
 					"xhaircolor" : [ 0.999995052814484, 1.0, 1.0, 1.0 ]
 				}
 
@@ -5355,7 +5356,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1764.0, 484.0, 231.0, 33.0 ],
-					"text" : "/position : [0.422474, 0.441177]"
+					"text" : "/position : [0.339706, 0.265543]"
 				}
 
 			}
@@ -5566,13 +5567,13 @@
 				"box" : 				{
 					"fontface" : 0,
 					"id" : "obj-6",
-					"linecount" : 18,
+					"linecount" : 21,
 					"maxclass" : "o.display",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 89.0, 718.0, 470.0, 251.0 ],
-					"text" : "/controller/joystick/R/position : [0.0117647, -0.027451],\n/controller/joystick/L/position : [0.0117647, -0.00392157],\n/controller/button/circle : 0,\n/controller/button/x : 0,\n/controller/button/square : 0,\n/controller/dpad/N : 0,\n/controller/dpad/NE : 0,\n/controller/dpad/E : 0,\n/controller/dpad/SE : 0,\n/controller/dpad/S : 0,\n/controller/dpad/SW : 0,\n/controller/dpad/W : 0,\n/controller/dpad/NW : 0,\n/controller/joystick/R3 : 0,\n/controller/joystick/L3 : 0,\n/controller/trigger/R1 : 0,\n/controller/trigger/L1 : 0,\n/controller/button/triangle : 0"
+					"patching_rect" : [ 89.0, 718.0, 470.0, 289.0 ],
+					"text" : "/controller/joystick/L/position : [0.027451, -0.00392157],\n/controller/button/x : 0,\n/controller/joystick/R/position : [0.0117647, -0.0117647],\n/controller/button/circle : 0,\n/controller/joystick/R3 : 0,\n/controller/button/square : 0,\n/controller/dpad/N : 0,\n/controller/dpad/NE : 0,\n/controller/dpad/E : 0,\n/controller/dpad/SE : 0,\n/controller/dpad/S : 0,\n/controller/dpad/SW : 0,\n/controller/dpad/W : 0,\n/controller/dpad/NW : 0,\n/controller/trigger/R1 : 0,\n/controller/trigger/L1 : 0,\n/controller/joystick/L3 : 0,\n/controller/trigger/R2/active : 0,\n/controller/trigger/R2/pressure : 0,\n/controller/trigger/L2/active : 0,\n/controller/trigger/L2/pressure : 0"
 				}
 
 			}
