@@ -40,6 +40,90 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-96",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "FullPacket" ],
+					"patching_rect" : [ 1761.0, 657.0, 133.0, 22.0 ],
+					"text" : "o.select /button/triangle"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-271",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1761.0, 556.0, 67.0, 22.0 ],
+					"text" : "r rbfi-mode"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-272",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1799.75, 589.0, 88.0, 22.0 ],
+					"text" : "r controller-osc"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-273",
+					"maxclass" : "toggle",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 1761.0, 589.0, 24.0, 24.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-274",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1761.0, 625.0, 57.75, 22.0 ],
+					"text" : "gate"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-95",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"patching_rect" : [ 1761.0, 694.0, 190.0, 22.0 ],
+					"text" : "trigger.multitap /button/triangle 3 2"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-93",
+					"maxclass" : "button",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 1746.0, 733.0, 24.0, 24.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-89",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
@@ -2336,7 +2420,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 291.0, 287.0, 231.0, 33.0 ],
-									"text" : "/position : [0.308513, 0.812653]"
+									"text" : "/position : [0.407393, 0.599399]"
 								}
 
 							}
@@ -6930,7 +7014,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 2072.0, 993.0, 79.0, 22.0 ],
+					"patching_rect" : [ 2054.0, 971.0, 79.0, 22.0 ],
 					"text" : "r fs-in-umenu"
 				}
 
@@ -6941,7 +7025,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1877.5, 1115.0, 48.0, 22.0 ],
+					"patching_rect" : [ 1859.5, 1093.0, 48.0, 22.0 ],
 					"text" : "s fs-out"
 				}
 
@@ -6962,7 +7046,7 @@
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "FullPacket" ],
-					"patching_rect" : [ 1877.5, 1025.0, 213.5, 81.0 ],
+					"patching_rect" : [ 1859.5, 1003.0, 213.5, 81.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -7227,7 +7311,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 6.5, 671.0, 470.0, 328.0 ],
-					"text" : "/controller/joystick/L/position : [0.0196078, -0.027451],\n/controller/joystick/R/position : [0.00392157, -0.0117647],\n/controller/trigger/L1 : 0,\n/controller/trigger/R1 : 0,\n/controller/joystick/L3 : 0,\n/controller/joystick/R3 : 0,\n/controller/dpad/N : 0,\n/controller/dpad/NE : 0,\n/controller/dpad/E : 0,\n/controller/dpad/SE : 0,\n/controller/dpad/S : 0,\n/controller/dpad/SW : 0,\n/controller/dpad/W : 0,\n/controller/dpad/NW : 0,\n/controller/button/x : 0,\n/controller/button/square : 0,\n/controller/trigger/R2/active : 0,\n/controller/trigger/R2/pressure : 0,\n/controller/misc/create : 0,\n/controller/trigger/L2/active : 0,\n/controller/trigger/L2/pressure : 0,\n/controller/button/triangle : 0,\n/controller/misc/options : 0,\n/controller/button/circle : 0"
+					"text" : "/controller/button/triangle : 0,\n/controller/trigger/R2/active : 0,\n/controller/trigger/R2/pressure : 0,\n/controller/joystick/L/position : [0.0196078, -0.0196078],\n/controller/trigger/L2/active : 0,\n/controller/trigger/L2/pressure : 0,\n/controller/dpad/N : 0,\n/controller/dpad/NE : 0,\n/controller/dpad/E : 0,\n/controller/dpad/SE : 0,\n/controller/dpad/S : 0,\n/controller/dpad/SW : 0,\n/controller/dpad/W : 0,\n/controller/dpad/NW : 0,\n/controller/joystick/L3 : 0,\n/controller/joystick/R/position : [0.0117647, -0.0117647],\n/controller/trigger/L1 : 0,\n/controller/trigger/R1 : 0,\n/controller/joystick/R3 : 0,\n/controller/button/x : 0,\n/controller/button/square : 0,\n/controller/misc/create : 0,\n/controller/misc/options : 0,\n/controller/button/circle : 0"
 				}
 
 			}
@@ -7589,6 +7673,34 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-273", 0 ],
+					"source" : [ "obj-271", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-274", 1 ],
+					"source" : [ "obj-272", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-274", 0 ],
+					"source" : [ "obj-273", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-96", 0 ],
+					"source" : [ "obj-274", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-42", 0 ],
 					"source" : [ "obj-28", 0 ]
 				}
@@ -7843,6 +7955,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-95", 0 ],
+					"source" : [ "obj-96", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-50", 0 ],
 					"source" : [ "obj-99", 0 ]
 				}
@@ -7983,6 +8102,13 @@
 			}
 , 			{
 				"name" : "state-trigger.maxpat",
+				"bootpath" : "~/workspace/projects/grooveportal/patchers",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "trigger.multitap.maxpat",
 				"bootpath" : "~/workspace/projects/grooveportal/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
