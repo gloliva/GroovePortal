@@ -2420,7 +2420,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 291.0, 287.0, 231.0, 33.0 ],
-									"text" : "/position : [0.407393, 0.599399]"
+									"text" : "/position : [0.268302, 0.159281]"
 								}
 
 							}
@@ -3333,13 +3333,13 @@
 				"box" : 				{
 					"fontface" : 0,
 					"id" : "obj-75",
-					"linecount" : 7,
+					"linecount" : 3,
 					"maxclass" : "o.display",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 770.0, 958.5, 349.0, 110.0 ],
-					"text" : "/point/name : \"b2\",\n/point/coords : [0.740575, 0.808635],\n/point/rgb : [0.75, 0.5625, 0.1875],\n/point/inner_radius : 0.055,\n/point/outer_radius : 0.2,\n/layer/num : 0,\n/layer/prefix : \"\""
+					"patching_rect" : [ 770.0, 958.5, 349.0, 59.0 ],
+					"text" : "/point/name : \"\",\n/layer/num : 0,\n/layer/prefix : \"\""
 				}
 
 			}
@@ -5012,13 +5012,13 @@
 				"box" : 				{
 					"fontface" : 0,
 					"id" : "obj-117",
-					"linecount" : 7,
+					"linecount" : 3,
 					"maxclass" : "o.display",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1720.5, 233.0, 288.0, 110.0 ],
-					"text" : "/point/name : \"b2\",\n/point/coords : [0.740575, 0.808635],\n/point/rgb : [0.75, 0.5625, 0.1875],\n/point/inner_radius : 0.055,\n/point/outer_radius : 0.2,\n/layer/num : 0,\n/layer/prefix : \"\""
+					"patching_rect" : [ 1720.5, 233.0, 288.0, 59.0 ],
+					"text" : "/point/name : \"\",\n/layer/num : 0,\n/layer/prefix : \"\""
 				}
 
 			}
@@ -7057,7 +7057,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 2300.0, 158.0, 93.0, 22.0 ],
+					"patching_rect" : [ 1767.0, 814.5, 93.0, 22.0 ],
 					"text" : "s rbfi-messages"
 				}
 
@@ -7076,44 +7076,8 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-43",
-					"maxclass" : "newobj",
-					"numinlets" : 0,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 2299.0, 20.5, 88.0, 22.0 ],
-					"text" : "r controller-osc"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-44",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 2299.0, 86.5, 73.0, 22.0 ],
-					"text" : "state-trigger"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-45",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "FullPacket" ],
-					"patching_rect" : [ 2299.0, 53.5, 129.0, 22.0 ],
-					"text" : "o.route /button/triangle"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"always_draw_circles" : 25573678389395457,
-					"always_draw_labels" : 5954336,
+					"always_draw_labels" : 4300921632,
 					"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"font_size" : 12,
 					"fontface" : 0,
@@ -7141,7 +7105,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 2300.0, 127.0, 35.0, 22.0 ],
+					"patching_rect" : [ 1767.0, 783.5, 35.0, 22.0 ],
 					"text" : "clear"
 				}
 
@@ -7311,7 +7275,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 6.5, 671.0, 470.0, 328.0 ],
-					"text" : "/controller/button/triangle : 0,\n/controller/trigger/R2/active : 0,\n/controller/trigger/R2/pressure : 0,\n/controller/joystick/L/position : [0.0196078, -0.0196078],\n/controller/trigger/L2/active : 0,\n/controller/trigger/L2/pressure : 0,\n/controller/dpad/N : 0,\n/controller/dpad/NE : 0,\n/controller/dpad/E : 0,\n/controller/dpad/SE : 0,\n/controller/dpad/S : 0,\n/controller/dpad/SW : 0,\n/controller/dpad/W : 0,\n/controller/dpad/NW : 0,\n/controller/joystick/L3 : 0,\n/controller/joystick/R/position : [0.0117647, -0.0117647],\n/controller/trigger/L1 : 0,\n/controller/trigger/R1 : 0,\n/controller/joystick/R3 : 0,\n/controller/button/x : 0,\n/controller/button/square : 0,\n/controller/misc/create : 0,\n/controller/misc/options : 0,\n/controller/button/circle : 0"
+					"text" : "/controller/joystick/R/position : [0.0196078, -0.027451],\n/controller/joystick/L/position : [-0.0117647, -0.0352941],\n/controller/button/triangle : 0,\n/controller/button/x : 0,\n/controller/button/square : 0,\n/controller/dpad/N : 0,\n/controller/dpad/NE : 0,\n/controller/dpad/E : 0,\n/controller/dpad/SE : 0,\n/controller/dpad/S : 0,\n/controller/dpad/SW : 0,\n/controller/dpad/W : 0,\n/controller/dpad/NW : 0,\n/controller/joystick/R3 : 0,\n/controller/trigger/R2/active : 0,\n/controller/trigger/R2/pressure : 0,\n/controller/trigger/L2/active : 0,\n/controller/trigger/L2/pressure : 0,\n/controller/joystick/L3 : 0,\n/controller/trigger/L1 : 0,\n/controller/trigger/R1 : 0,\n/controller/misc/create : 0,\n/controller/misc/options : 0,\n/controller/button/circle : 0"
 				}
 
 			}
@@ -7787,20 +7751,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-45", 0 ],
-					"source" : [ "obj-43", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-44", 0 ],
-					"source" : [ "obj-45", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-5", 0 ],
 					"source" : [ "obj-48", 0 ]
 				}
@@ -7950,6 +7900,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-40", 0 ],
 					"source" : [ "obj-9", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-93", 0 ],
+					"source" : [ "obj-95", 0 ]
 				}
 
 			}
