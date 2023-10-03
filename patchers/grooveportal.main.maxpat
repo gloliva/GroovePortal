@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 1474.0, -211.0, 2492.0, 1319.0 ],
+		"rect" : [ 1474.0, -211.0, 2201.0, 1319.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -407,7 +407,6 @@
 					}
 ,
 					"patching_rect" : [ 6.5, 1688.5, 262.0, 22.0 ],
-					"presentation_linecount" : 4,
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -580,8 +579,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 28.0, 167.0, 73.0, 22.0 ],
-									"text" : "state-trigger"
+									"patching_rect" : [ 28.0, 167.0, 71.0, 22.0 ],
+									"text" : "trigger.state"
 								}
 
 							}
@@ -723,7 +722,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1151.0, 127.0, 63.0, 22.0 ],
-					"presentation_linecount" : 3,
 					"text" : "writeagain"
 				}
 
@@ -823,8 +821,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 710.0, 161.5, 73.0, 22.0 ],
-									"text" : "state-trigger"
+									"patching_rect" : [ 710.0, 161.5, 71.0, 22.0 ],
+									"text" : "trigger.state"
 								}
 
 							}
@@ -835,8 +833,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 24.0, 161.5, 73.0, 22.0 ],
-									"text" : "state-trigger"
+									"patching_rect" : [ 24.0, 161.5, 71.0, 22.0 ],
+									"text" : "trigger.state"
 								}
 
 							}
@@ -1294,6 +1292,7 @@
 				"box" : 				{
 					"id" : "obj-25",
 					"maxclass" : "number",
+					"minimum" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
@@ -2130,7 +2129,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 59.0, 106.0, 640.0, 480.0 ],
+						"rect" : [ 2639.0, -84.0, 1042.0, 861.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2345,8 +2344,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 143.0, 309.0, 73.0, 22.0 ],
-									"text" : "state-trigger"
+									"patching_rect" : [ 143.0, 309.0, 71.0, 22.0 ],
+									"text" : "trigger.state"
 								}
 
 							}
@@ -2420,7 +2419,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 291.0, 287.0, 231.0, 33.0 ],
-									"text" : "/position : [0.268302, 0.159281]"
+									"text" : "/position : [0.68674, 0.213057]"
 								}
 
 							}
@@ -2432,7 +2431,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 291.0, 167.0, 117.0, 22.0 ],
-									"text" : "joystick-accumulator"
+									"text" : "joystick.accumulator"
 								}
 
 							}
@@ -3058,8 +3057,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 19.25, 192.5, 73.0, 22.0 ],
-									"text" : "state-trigger"
+									"patching_rect" : [ 19.25, 192.5, 71.0, 22.0 ],
+									"text" : "trigger.state"
 								}
 
 							}
@@ -3333,13 +3332,11 @@
 				"box" : 				{
 					"fontface" : 0,
 					"id" : "obj-75",
-					"linecount" : 3,
 					"maxclass" : "o.display",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 770.0, 958.5, 349.0, 59.0 ],
-					"text" : "/point/name : \"\",\n/layer/num : 0,\n/layer/prefix : \"\""
+					"patching_rect" : [ 770.0, 958.5, 349.0, 33.0 ]
 				}
 
 			}
@@ -3549,8 +3546,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 19.25, 192.5, 73.0, 22.0 ],
-									"text" : "state-trigger"
+									"patching_rect" : [ 19.25, 192.5, 71.0, 22.0 ],
+									"text" : "trigger.state"
 								}
 
 							}
@@ -4112,8 +4109,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 50.0, 209.0, 73.0, 22.0 ],
-									"text" : "state-trigger"
+									"patching_rect" : [ 50.0, 209.0, 71.0, 22.0 ],
+									"text" : "trigger.state"
 								}
 
 							}
@@ -5012,13 +5009,11 @@
 				"box" : 				{
 					"fontface" : 0,
 					"id" : "obj-117",
-					"linecount" : 3,
 					"maxclass" : "o.display",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1720.5, 233.0, 288.0, 59.0 ],
-					"text" : "/point/name : \"\",\n/layer/num : 0,\n/layer/prefix : \"\""
+					"patching_rect" : [ 1720.5, 233.0, 288.0, 33.0 ]
 				}
 
 			}
@@ -5218,7 +5213,7 @@
 					"lockeddragscroll" : 0,
 					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "dynamic-buffer~.maxpat",
+					"name" : "dynamic.buffer~.maxpat",
 					"numinlets" : 3,
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
@@ -5226,7 +5221,7 @@
 					"patching_rect" : [ 1292.5, 1003.0, 470.0, 257.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 1024.5, 231.0, 470.0, 257.0 ],
-					"varname" : "main-dynamic-buffer[1]",
+					"varname" : "main-dynamic-buffer",
 					"viewvisibility" : 1
 				}
 
@@ -5263,7 +5258,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 926.0, 1684.0, 50.0, 22.0 ],
-					"text" : "4"
+					"text" : "3"
 				}
 
 			}
@@ -5713,7 +5708,7 @@
 					"lockeddragscroll" : 0,
 					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "dynamic-groove~.maxpat",
+					"name" : "dynamic.groove~.maxpat",
 					"numinlets" : 3,
 					"numoutlets" : 2,
 					"offset" : [ 0.0, 0.0 ],
@@ -5826,8 +5821,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 499.5, 204.0, 73.0, 22.0 ],
-									"text" : "state-trigger"
+									"patching_rect" : [ 499.5, 204.0, 71.0, 22.0 ],
+									"text" : "trigger.state"
 								}
 
 							}
@@ -5947,8 +5942,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 28.0, 200.0, 73.0, 22.0 ],
-									"text" : "state-trigger"
+									"patching_rect" : [ 28.0, 200.0, 71.0, 22.0 ],
+									"text" : "trigger.state"
 								}
 
 							}
@@ -7077,7 +7072,7 @@
 , 			{
 				"box" : 				{
 					"always_draw_circles" : 25573678389395457,
-					"always_draw_labels" : 4300921632,
+					"always_draw_labels" : 5954336,
 					"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"font_size" : 12,
 					"fontface" : 0,
@@ -7269,13 +7264,13 @@
 				"box" : 				{
 					"fontface" : 0,
 					"id" : "obj-6",
-					"linecount" : 24,
+					"linecount" : 27,
 					"maxclass" : "o.display",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 6.5, 671.0, 470.0, 328.0 ],
-					"text" : "/controller/joystick/R/position : [0.0196078, -0.027451],\n/controller/joystick/L/position : [-0.0117647, -0.0352941],\n/controller/button/triangle : 0,\n/controller/button/x : 0,\n/controller/button/square : 0,\n/controller/dpad/N : 0,\n/controller/dpad/NE : 0,\n/controller/dpad/E : 0,\n/controller/dpad/SE : 0,\n/controller/dpad/S : 0,\n/controller/dpad/SW : 0,\n/controller/dpad/W : 0,\n/controller/dpad/NW : 0,\n/controller/joystick/R3 : 0,\n/controller/trigger/R2/active : 0,\n/controller/trigger/R2/pressure : 0,\n/controller/trigger/L2/active : 0,\n/controller/trigger/L2/pressure : 0,\n/controller/joystick/L3 : 0,\n/controller/trigger/L1 : 0,\n/controller/trigger/R1 : 0,\n/controller/misc/create : 0,\n/controller/misc/options : 0,\n/controller/button/circle : 0"
+					"patching_rect" : [ 6.5, 667.0, 470.0, 366.0 ],
+					"text" : "/controller/joystick/L/position : [0.0196078, -0.0117647],\n/controller/button/square : 0,\n/controller/dpad/N : 0,\n/controller/dpad/NE : 0,\n/controller/dpad/E : 0,\n/controller/dpad/SE : 0,\n/controller/dpad/S : 0,\n/controller/dpad/SW : 0,\n/controller/dpad/W : 0,\n/controller/dpad/NW : 0,\n/controller/button/triangle : 0,\n/controller/joystick/L3 : 0,\n/controller/joystick/R/position : [0.0117647, -0.0196078],\n/controller/trigger/R1 : 0,\n/controller/button/x : 0,\n/controller/button/circle : 0,\n/controller/trigger/R2/active : 0,\n/controller/trigger/R2/pressure : 0,\n/controller/trigger/L2/active : 0,\n/controller/trigger/L2/pressure : 0,\n/controller/trigger/L1 : 0,\n/controller/joystick/R3 : 0,\n/controller/misc/PS : 0,\n/controller/misc/mute : 0,\n/controller/misc/create : 0,\n/controller/misc/options : 0,\n/controller/touchpad/active : 0"
 				}
 
 			}
@@ -7290,7 +7285,7 @@
 					"lockeddragscroll" : 0,
 					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "ps5-controller.maxpat",
+					"name" : "controller.ps5.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
@@ -7940,6 +7935,13 @@
 		}
 ,
 		"dependency_cache" : [ 			{
+				"name" : "controller.ps5.maxpat",
+				"bootpath" : "~/workspace/projects/grooveportal/patchers",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "dsc.ds5.usb.maxpat",
 				"bootpath" : "~/Music/Max Patches",
 				"patcherrelativepath" : "../../../../Music/Max Patches",
@@ -7947,14 +7949,14 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "dynamic-buffer~.maxpat",
+				"name" : "dynamic.buffer~.maxpat",
 				"bootpath" : "~/workspace/projects/grooveportal/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "dynamic-groove~.maxpat",
+				"name" : "dynamic.groove~.maxpat",
 				"bootpath" : "~/workspace/projects/grooveportal/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
@@ -7982,7 +7984,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "joystick-accumulator.maxpat",
+				"name" : "joystick.accumulator.maxpat",
 				"bootpath" : "~/workspace/projects/grooveportal/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
@@ -8047,25 +8049,18 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ps5-controller.maxpat",
-				"bootpath" : "~/workspace/projects/grooveportal/patchers",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "rbfi.mxo",
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "state-trigger.maxpat",
+				"name" : "trigger.multitap.maxpat",
 				"bootpath" : "~/workspace/projects/grooveportal/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "trigger.multitap.maxpat",
+				"name" : "trigger.state.maxpat",
 				"bootpath" : "~/workspace/projects/grooveportal/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",

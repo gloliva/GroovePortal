@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 1827.0, -62.0, 1852.0, 959.0 ],
+		"rect" : [ 1812.0, -118.0, 1852.0, 1202.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -39,6 +39,46 @@
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-39",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"patching_rect" : [ 933.600000000000136, 404.0, 58.0, 22.0 ],
+					"text" : "loadbang"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-38",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"patching_rect" : [ 17.0, 67.0, 58.0, 22.0 ],
+					"text" : "loadbang"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 0,
+					"id" : "obj-26",
+					"linecount" : 27,
+					"maxclass" : "o.compose",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 933.600000000000136, 437.0, 266.0, 356.0 ],
+					"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 100, 112, 97, 100, 47, 78, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 100, 112, 97, 100, 47, 78, 69, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 100, 112, 97, 100, 47, 69, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 100, 112, 97, 100, 47, 83, 69, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 100, 112, 97, 100, 47, 83, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 100, 112, 97, 100, 47, 83, 87, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 100, 112, 97, 100, 47, 87, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 100, 112, 97, 100, 47, 78, 87, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 116, 114, 105, 103, 103, 101, 114, 47, 76, 49, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 116, 114, 105, 103, 103, 101, 114, 47, 82, 49, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 47, 116, 114, 105, 103, 103, 101, 114, 47, 82, 50, 47, 97, 99, 116, 105, 118, 101, 0, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 32, 47, 116, 114, 105, 103, 103, 101, 114, 47, 82, 50, 47, 112, 114, 101, 115, 115, 117, 114, 101, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 47, 116, 114, 105, 103, 103, 101, 114, 47, 76, 50, 47, 97, 99, 116, 105, 118, 101, 0, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 32, 47, 116, 114, 105, 103, 103, 101, 114, 47, 76, 50, 47, 112, 114, 101, 115, 115, 117, 114, 101, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 44, 47, 106, 111, 121, 115, 116, 105, 99, 107, 47, 76, 47, 112, 111, 115, 105, 116, 105, 111, 110, 0, 0, 0, 0, 44, 100, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 44, 47, 106, 111, 121, 115, 116, 105, 99, 107, 47, 82, 47, 112, 111, 115, 105, 116, 105, 111, 110, 0, 0, 0, 0, 44, 100, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 106, 111, 121, 115, 116, 105, 99, 107, 47, 76, 51, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 106, 111, 121, 115, 116, 105, 99, 107, 47, 82, 51, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 109, 105, 115, 99, 47, 80, 83, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 109, 105, 115, 99, 47, 109, 117, 116, 101, 0, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 109, 105, 115, 99, 47, 99, 114, 101, 97, 116, 101, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 109, 105, 115, 99, 47, 111, 112, 116, 105, 111, 110, 115, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 47, 116, 111, 117, 99, 104, 112, 97, 100, 47, 97, 99, 116, 105, 118, 101, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 98, 117, 116, 116, 111, 110, 47, 120, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 98, 117, 116, 116, 111, 110, 47, 99, 105, 114, 99, 108, 101, 0, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 47, 98, 117, 116, 116, 111, 110, 47, 116, 114, 105, 97, 110, 103, 108, 101, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 98, 117, 116, 116, 111, 110, 47, 115, 113, 117, 97, 114, 101, 0, 0, 44, 105, 0, 0, 0, 0, 0, 0 ],
+					"saved_bundle_length" : 776,
+					"text" : "/dpad/N : 0,\n/dpad/NE : 0,\n/dpad/E : 0,\n/dpad/SE : 0,\n/dpad/S : 0,\n/dpad/SW : 0,\n/dpad/W : 0,\n/dpad/NW : 0,\n/trigger/L1 : 0,\n/trigger/R1 : 0,\n/trigger/R2/active : 0,\n/trigger/R2/pressure : 0,\n/trigger/L2/active : 0,\n/trigger/L2/pressure : 0,\n/joystick/L/position : [0., 0.],\n/joystick/R/position : [0., 0.],\n/joystick/L3 : 0,\n/joystick/R3 : 0,\n/misc/PS : 0,\n/misc/mute : 0,\n/misc/create : 0,\n/misc/options : 0,\n/touchpad/active : 0,\n/button/x : 0,\n/button/circle : 0,\n/button/triangle : 0,\n/button/square : 0"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"border" : 4.0,
 					"id" : "obj-2",
@@ -2236,7 +2276,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "FullPacket" ],
-					"patching_rect" : [ 1213.53333333333353, 464.0, 51.0, 22.0 ],
+					"patching_rect" : [ 1213.53333333333353, 892.0, 51.0, 22.0 ],
 					"text" : "o.flatten"
 				}
 
@@ -2248,7 +2288,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "FullPacket" ],
-					"patching_rect" : [ 1213.53333333333353, 432.0, 100.0, 22.0 ],
+					"patching_rect" : [ 1213.53333333333353, 860.0, 100.0, 22.0 ],
 					"text" : "o.pack /controller"
 				}
 
@@ -2261,7 +2301,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1213.53333333333353, 496.0, 30.0, 30.0 ]
+					"patching_rect" : [ 1213.53333333333353, 924.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -2272,7 +2312,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1213.53333333333353, 398.0, 54.0, 22.0 ],
+					"patching_rect" : [ 1213.53333333333353, 826.0, 54.0, 22.0 ],
 					"text" : "o.accum"
 				}
 
@@ -2743,7 +2783,7 @@
 					"elementcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"fontsize" : 20.0,
 					"id" : "obj-4",
-					"items" : [ "DualSense Wireless Controller", ",", "Apple Internal Keyboard / Trackpad", ",", "Apple Internal Keyboard / Trackpad 2", ",", "Apple Internal Keyboard / Trackpad 3", ",", "Apple Internal Keyboard / Trackpad 4", ",", "Apple Internal Keyboard / Trackpad 5", ",", "G502 LIGHTSPEED Wireless Gaming Mouse", ",", "G502 LIGHTSPEED Wireless Gaming Mouse 2", ",", "G502 LIGHTSPEED Wireless Gaming Mouse 3", ",", "Razer BlackWidow", ",", "Razer BlackWidow 2", ",", "Razer BlackWidow 3", ",", "Ambient Light Sensor", ",", "Touch Bar Display", ",", "Touch Bar Backlight", ",", "Headset", ",", "Touch Bar Backlight 2", ",", "TouchBarUserDevice" ],
+					"items" : [ "Apple Internal Keyboard / Trackpad", ",", "Apple Internal Keyboard / Trackpad 2", ",", "Apple Internal Keyboard / Trackpad 3", ",", "Apple Internal Keyboard / Trackpad 4", ",", "Apple Internal Keyboard / Trackpad 5", ",", "DualSense Wireless Controller", ",", "G502 LIGHTSPEED Wireless Gaming Mouse", ",", "G502 LIGHTSPEED Wireless Gaming Mouse 2", ",", "G502 LIGHTSPEED Wireless Gaming Mouse 3", ",", "Razer BlackWidow", ",", "Razer BlackWidow 2", ",", "Razer BlackWidow 3", ",", "Ambient Light Sensor", ",", "Touch Bar Display", ",", "Touch Bar Backlight", ",", "Headset", ",", "Touch Bar Backlight 2", ",", "TouchBarUserDevice" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -3289,6 +3329,14 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-5", 0 ],
+					"midpoints" : [ 943.100000000000136, 806.0, 1223.03333333333353, 806.0 ],
+					"source" : [ "obj-26", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-95", 1 ],
 					"source" : [ "obj-27", 0 ]
 				}
@@ -3368,6 +3416,20 @@
 				"patchline" : 				{
 					"destination" : [ "obj-108", 1 ],
 					"source" : [ "obj-37", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-6", 0 ],
+					"source" : [ "obj-38", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-26", 0 ],
+					"source" : [ "obj-39", 0 ]
 				}
 
 			}
@@ -3453,6 +3515,10 @@
 				"patcherrelativepath" : "../../../../Documents/Max 8/Packages/odot/patchers/namespace",
 				"type" : "JSON",
 				"implicit" : 1
+			}
+, 			{
+				"name" : "o.compose.mxo",
+				"type" : "iLaX"
 			}
 , 			{
 				"name" : "o.expr.codebox.mxo",
