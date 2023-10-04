@@ -40,11 +40,11 @@ var routeOutlets = 1;
 /***************************
 **** Position Variables ****
 ****************************/
-var routeX = 80;
-var routeY = 650;
+var routeX = 85;
+var routeY = 1050;
 var bufferXOffset = 50;
 var bufferSpacing = 150;
-var bufferY = 700;
+var bufferY = 1100;
 
 
 /***********************
