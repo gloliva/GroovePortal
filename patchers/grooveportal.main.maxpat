@@ -40,6 +40,23 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-108",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 4,
+					"outlettype" : [ "", "", "", "" ],
+					"patching_rect" : [ 603.0, 81.0, 91.0, 22.0 ],
+					"restore" : 					{
+						"rbfi-storage" : [ "space", 4, 0.144429707296351, 0.838136675082921, "b2", 0.75, 0.375, 0.1875, 0.0, 3.321928094887363, 371411.723786805581767, 0.05, 0.2, 0, "space", 0, 0.427165462556978, 0.368738182808548, "b4", 0.75, 0.5625, 0.1875, 0.0, 3.321928094887363, 371411.723786805581767, 0.05, 0.2, 0, "space", 1, 0.427165462556978, 0.368738182808548, "[b4]", 0.75, 0.5625, 0.1875, 1.0, 3.321928094887363, 371411.723786805581767, 0.05, 0.2, 0, 0.691450471184093, 0.675106570890926, "b3", 0.5625, 0.75, 0.1875, 0.0, 3.321928094887363, 371411.723786805581767, 0.05, 0.2, 0, "space", 1, 0.691450471184093, 0.675106570890926, "[b3]", 0.5625, 0.75, 0.1875, 1.0, 3.321928094887363, 371411.723786805581767, 0.05, 0.2, 0, 0.740421822393508, 0.237131992416426, "b5", 0.375, 0.75, 0.1875, 0.0, 3.321928094887363, 371411.723786805581767, 0.05, 0.2, 0, "space", 0 ]
+					}
+,
+					"text" : "autopattr",
+					"varname" : "u909004543"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-100",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
@@ -790,7 +807,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 137.0, 192.0, 193.0, 22.0 ],
-									"restore" : [ "b2", "[b2]b1" ],
+									"restore" : [ "b4", "b3" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -1007,18 +1024,6 @@
 ,
 					"text" : "p pattr-store-and-load-coll",
 					"varname" : "patcher"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-62",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 1445.0, 281.0, 50.0, 22.0 ],
-					"text" : "store 1"
 				}
 
 			}
@@ -3555,7 +3560,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1155.0, 461.0, 306.0, 72.0 ],
-					"text" : "/point/name : \"\",\n/layer/num : 0,\n/layer/prefix : \"\",\n/layer/numpoints : 2"
+					"text" : "/point/name : \"\",\n/layer/num : 0,\n/layer/prefix : \"\",\n/layer/numpoints : 1"
 				}
 
 			}
@@ -6608,25 +6613,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-16",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 708.0, 127.0, 53.0, 22.0 ],
-					"restore" : [ "space", 2, 0.349495104139946, 0.410844308220573, "b1", 0.75, 0.5625, 0.1875, 0.0, 3.321928094887363, 371411.723786805581767, 0.05, 0.2, 0, 0.636116946970804, 0.361920478115212, "b2", 0.75, 0.75, 0.1875, 0.0, 3.321928094887363, 371411.723786805581767, 0.05, 0.2, 0 ],
-					"saved_object_attributes" : 					{
-						"parameter_enable" : 0,
-						"parameter_mappable" : 0
-					}
-,
-					"text" : "pattr rbfi",
-					"varname" : "rbfi"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-9",
 					"maxclass" : "message",
 					"numinlets" : 2,
@@ -6647,10 +6633,10 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1109.0, 273.5, 73.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 4, 87, 358, 215 ],
+						"client_rect" : [ 51, 107, 1183, 235 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 583, 87, 1034, 215 ]
+						"storage_rect" : [ 208, 243, 942, 371 ]
 					}
 ,
 					"text" : "pattrstorage",
@@ -7771,7 +7757,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 291.0, 287.0, 231.0, 33.0 ],
-									"text" : "/position : [0.143041, 0.619411]"
+									"text" : "/position : [0.415386, 0.674802]"
 								}
 
 							}
@@ -13445,7 +13431,7 @@
 , 			{
 				"box" : 				{
 					"always_draw_circles" : 25573678389395457,
-					"always_draw_labels" : 5954336,
+					"always_draw_labels" : 4300921632,
 					"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"font_size" : 12,
 					"fontface" : 0,
@@ -13460,8 +13446,8 @@
 					"patching_rect" : [ 603.0, 162.0, 475.0, 475.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 124.0, 231.0, 848.0, 848.0 ],
-					"spaces" : [ "space", 2, 0.349495104139946, 0.410844308220573, "b1", 0.75, 0.5625, 0.1875, 0.0, 3.321928094887363, 371411.723786805581767, 0.05, 0.2, 0, 0.636116946970804, 0.361920478115212, "b2", 0.75, 0.75, 0.1875, 0.0, 3.321928094887363, 371411.723786805581767, 0.05, 0.2, 0 ],
-					"varname" : "rbfi[1]",
+					"spaces" : [ "space", 4, 0.144429707296351, 0.838136675082921, "b2", 0.75, 0.375, 0.1875, 0.0, 3.321928094887363, 371411.723786805581767, 0.05, 0.2, 0, "space", 0, 0.427165462556978, 0.368738182808548, "b4", 0.75, 0.5625, 0.1875, 0.0, 3.321928094887363, 371411.723786805581767, 0.05, 0.2, 0, "space", 1, 0.427165462556978, 0.368738182808548, "[b4]", 0.75, 0.5625, 0.1875, 1.0, 3.321928094887363, 371411.723786805581767, 0.05, 0.2, 0, 0.691450471184093, 0.675106570890926, "b3", 0.5625, 0.75, 0.1875, 0.0, 3.321928094887363, 371411.723786805581767, 0.05, 0.2, 0, "space", 1, 0.691450471184093, 0.675106570890926, "[b3]", 0.5625, 0.75, 0.1875, 1.0, 3.321928094887363, 371411.723786805581767, 0.05, 0.2, 0, 0.740421822393508, 0.237131992416426, "b5", 0.375, 0.75, 0.1875, 0.0, 3.321928094887363, 371411.723786805581767, 0.05, 0.2, 0, "space", 0 ],
+					"varname" : "rbfi-storage",
 					"xhaircolor" : [ 0.999995052814484, 1.0, 1.0, 1.0 ]
 				}
 
@@ -13616,8 +13602,7 @@
 						}
 
 					}
-,
-					"varname" : "live.gain~"
+
 				}
 
 			}
@@ -13631,7 +13616,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 6.5, 664.0, 470.0, 366.0 ],
-					"text" : "/controller/joystick/R/position : [0.027451, -0.0117647],\n/controller/misc/create : 0,\n/controller/dpad/N : 0,\n/controller/dpad/NE : 0,\n/controller/dpad/E : 0,\n/controller/dpad/SE : 0,\n/controller/dpad/S : 0,\n/controller/dpad/SW : 0,\n/controller/dpad/W : 0,\n/controller/dpad/NW : 0,\n/controller/misc/options : 0,\n/controller/button/square : 0,\n/controller/joystick/L/position : [0.0117647, -0.00392157],\n/controller/button/circle : 0,\n/controller/button/x : 0,\n/controller/button/triangle : 0,\n/controller/joystick/R3 : 0,\n/controller/trigger/R2/active : 0,\n/controller/trigger/R2/pressure : 0,\n/controller/trigger/R1 : 0,\n/controller/joystick/L3 : 0,\n/controller/trigger/L1 : 0,\n/controller/trigger/L2/active : 0,\n/controller/trigger/L2/pressure : 0,\n/controller/misc/PS : 0,\n/controller/misc/mute : 0,\n/controller/touchpad/active : 0"
+					"text" : "/controller/joystick/L/position : [0.0117647, -0.0196078],\n/controller/joystick/R/position : [0.0196078, -0.0196078],\n/controller/button/circle : 0,\n/controller/button/x : 0,\n/controller/joystick/R3 : 0,\n/controller/joystick/L3 : 0,\n/controller/misc/create : 0,\n/controller/dpad/N : 0,\n/controller/dpad/NE : 0,\n/controller/dpad/E : 0,\n/controller/dpad/SE : 0,\n/controller/dpad/S : 0,\n/controller/dpad/SW : 0,\n/controller/dpad/W : 0,\n/controller/dpad/NW : 0,\n/controller/trigger/R2/active : 0,\n/controller/trigger/R2/pressure : 0,\n/controller/misc/options : 0,\n/controller/button/square : 0,\n/controller/button/triangle : 0,\n/controller/trigger/R1 : 0,\n/controller/trigger/L1 : 0,\n/controller/trigger/L2/active : 0,\n/controller/trigger/L2/pressure : 0,\n/controller/misc/PS : 0,\n/controller/misc/mute : 0,\n/controller/touchpad/active : 0"
 				}
 
 			}
@@ -13827,14 +13812,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-5", 0 ],
-					"midpoints" : [ 734.5, 155.0, 612.5, 155.0 ],
-					"source" : [ "obj-16", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-112", 0 ],
 					"source" : [ "obj-168", 1 ]
 				}
@@ -14008,15 +13985,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-42", 0 ],
-					"order" : 1,
-					"source" : [ "obj-28", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-62", 1 ],
-					"order" : 0,
 					"source" : [ "obj-28", 0 ]
 				}
 
