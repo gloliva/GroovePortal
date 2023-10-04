@@ -11,6 +11,7 @@ autowatch = 1;
 /***********************
 **** Input / Output ****
 ************************/
+var cursor = new Array();
 var points = new Array();
 var coords = new Array();
 var matrixOut = new Array();
@@ -22,6 +23,18 @@ var matrixOut = new Array();
 function bang() {
     if (inlet == 0) {
         output();
+    }
+}
+
+
+function setCursor() {
+    if (inlet == 0) {
+        cursor = new Array();
+        cursor = arrayfromargs(arguments);
+
+        if (points.length > 0 && coords.length > 0) {
+            output();
+        }
     }
 }
 
@@ -48,11 +61,19 @@ function setCoords() {
 function output() {
     matrixOut = new Array();
 
-    var tmp = points[0];
-    var name = getBufferNameFromPoint(tmp);
-    var bufferIdx = getBufferIdxFromName(name);
+    var name;
+    var bufferIdx;
+    var cursorX = cursor[0];
+    var pointX;
+    var channel;
+    for (var idx = 0; idx < points.length; idx++) {
+        pointX = getCoordsByIndex(idx)[0];
+        name = getBufferNameFromPoint(points[idx]);
+        bufferIdx = getBufferIdxFromName(name);
+        channel = calculateChannelGain(cursorX, pointX);
+        matrixOut.push(bufferIdx, 0, channel[0], bufferIdx, 1, channel[1])
+    }
 
-    matrixOut.push(tmp, name, bufferIdx)
     outlet(0, matrixOut);
 }
 
@@ -60,7 +81,20 @@ function output() {
 /**************************
 **** Utility Functions ****
 ***************************/
+function calculateChannelGain(cursorX, pointX) {
+    var diff = cursorX - pointX;
+    var clippedDiff = Math.min(Math.max(diff, -0.5), 0.5);
+    var channel = [0.5 + clippedDiff, 0.5 - clippedDiff];
+    return channel;
+}
+
+
 function getBufferNameFromPoint(point) {
+    // Handle Warp Point special case
+    if (point[point.length - 1] == "]") {
+        point = point.slice(0, point.length - 1);
+    }
+    
     var split = point.split("]");
     var name = "";
     if (split.length > 1) {
@@ -76,9 +110,11 @@ function getBufferNameFromPoint(point) {
     return name;
 }
 
+
 function getBufferIdxFromName(name) {
     return parseInt(name.slice(1)) - 1;
 }
+
 
 function getCoordsByIndex(index) {
     var startIndex = index * 2;
