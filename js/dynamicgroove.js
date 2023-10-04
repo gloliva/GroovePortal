@@ -503,7 +503,9 @@ function connectMatrixctrlToMatrix() {
 }
 
 
-// Utility Functions
+/**************************
+**** Utility Functions ****
+***************************/
 function parseIntsInArray(inputArray) {
     for (var i = 0; i < inputArray.length; i++) {
         var parsedInt = parseInt(inputArray[i]);

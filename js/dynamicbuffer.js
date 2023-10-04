@@ -10,29 +10,53 @@ autowatch = 1;
 /*************************
 **** String Templates ****
 **************************/
+// Route object
 var routeObjectTemplate = "script|newobject|newobj|@text|route <route>|@varname|buffer-route|@patching_position|<x>|<y>";
-var inletRouteConnectionTemplate = "script|connect|route-inlet|0|buffer-route|0";
+var routeSizeTemplate = "script|size|buffer-route|<size>|22";
+var inletRouteConnectionTemplate = "script|connect|route-trigger|1|buffer-route|0";
+
+// Buffer objects
 var bufferObjectTemplate = "script|newobject|newobj|@text|buffer~ <name>|@varname|<name>|@fixwidth|1|@patching_position|<x>|<y>";
 var routeBufferConnectionTemplate = "script|connect|buffer-route|<outlet>|<buffer>|0";
+
+// Misc scripting
 var deleteObjectTemplate = "script|delete|<obj>";
+
 
 /***********************
 **** Input / Output ****
 ************************/
 var outMsg = new Array();
 
+
+/******************
+**** Constants ****
+*******************/
 var bufferChange = 0;
 var numBuffers = 1;
 var routeOutlets = 1;
 
-// Position Constants
-var routeX = 25;
+
+/***************************
+**** Position Variables ****
+****************************/
+var routeX = 80;
 var routeY = 650;
-var bufferXOffset = 25;
-var bufferSpacing = 75;
+var bufferXOffset = 50;
+var bufferSpacing = 150;
 var bufferY = 700;
 
 
+/***********************
+**** Size Variables ****
+************************/
+var routeSizeStart = 169;
+var routeSizeIncrease = 150;
+
+
+/****************************
+**** Max Input Functions ****
+*****************************/
 function msg_int(i) {
     if (i > 0) {
         bufferChange = 1;
@@ -56,18 +80,18 @@ function bang() {
 }
 
 
+/*****************************
+**** Max Output Functions ****
+******************************/
 function output() {
     // Increase buffers
     if (bufferChange === 1) {
         numBuffers += 1;
 
-        // Recreate route if necessary
-        if (numBuffers > routeOutlets) {
-            deleteRoute();
-            createRoute();
-            connectInletToRoute();
-            routeOutlets = numBuffers;
-        }
+        // Recreate route
+        deleteRoute();
+        createRoute();
+        connectInletToRoute();
 
         // Create new buffer
         createBuffer();
@@ -96,7 +120,11 @@ function output() {
 }
 
 
+/*************************
+**** Create Functions ****
+**************************/
 function createRoute() {
+    // Create the object
     var routeText = "";
     for (var i = 0; i < numBuffers; i++) {
         routeText = routeText + i + " ";
@@ -108,21 +136,14 @@ function createRoute() {
         .replace("<y>", routeY);
     outMsg = routeObjectReplace.split("|");
     outlet(0, outMsg);
-}
 
+    // Adjust the object size
+    var size = routeSizeStart + (routeSizeIncrease * (numBuffers - 1));
+    var routeSize = routeSizeTemplate
+        .replace("<size>", size);
 
-function deleteRoute() {
-    var deleteObjectReplace = deleteObjectTemplate
-        .replace("<obj>", "buffer-route");
-    outMsg = deleteObjectReplace.split("|");
-    outlet(0, outMsg);
-}
-
-
-function connectInletToRoute() {
-    outMsg = inletRouteConnectionTemplate.split("|");
-    outMsg[3] = 0;
-    outMsg[5] = 0;
+    outMsg = routeSize.split("|");
+    parseIntsInArray(outMsg);
     outlet(0, outMsg);
 }
 
@@ -140,16 +161,37 @@ function createBuffer() {
     outlet(0, outMsg);
 }
 
+
+/**************************
+**** Connect Functions ****
+***************************/
+function connectInletToRoute() {
+    outMsg = inletRouteConnectionTemplate.split("|");
+    parseIntsInArray(outMsg);
+    outlet(0, outMsg);
+}
+
+
 function connectRouteToBuffers() {
     for (var bufferIdx = 0; bufferIdx < numBuffers; bufferIdx++) {
         var routeBufferConnectionReplace = routeBufferConnectionTemplate
             .replace("<outlet>", bufferIdx)
             .replace("<buffer>", "b" + (bufferIdx + 1));
         outMsg = routeBufferConnectionReplace.split("|");
-        outMsg[3] = parseInt(outMsg[3]);
-        outMsg[5] = 0;
+        parseIntsInArray(outMsg);
         outlet(0, outMsg);
     }
+}
+
+
+/*************************
+**** Delete Functions ****
+**************************/
+function deleteRoute() {
+    var deleteObjectReplace = deleteObjectTemplate
+        .replace("<obj>", "buffer-route");
+    outMsg = deleteObjectReplace.split("|");
+    outlet(0, outMsg);
 }
 
 
@@ -163,6 +205,9 @@ function deleteBuffer() {
 }
 
 
+/************************
+**** Umenu Functions ****
+*************************/
 function sendUmenuMsg() {
     var umenuMsg = new Array();
     if (bufferChange === 1) {
@@ -175,7 +220,9 @@ function sendUmenuMsg() {
 }
 
 
-// Utility Functions
+/**************************
+**** Utility Functions ****
+***************************/
 function parseIntsInArray(inputArray) {
     for (var i = 0; i < inputArray.length; i++) {
         var parsedInt = parseInt(inputArray[i]);
