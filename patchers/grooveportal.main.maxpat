@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 4034.0, -11.0, 1852.0, 959.0 ],
+		"rect" : [ 1474.0, -211.0, 2492.0, 1319.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -102,7 +102,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 2244.0, 127.0, 640.0, 480.0 ],
+						"rect" : [ 1621.0, 97.0, 640.0, 480.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -496,6 +496,7 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 1256.0, 334.0, 91.0, 22.0 ],
 					"restore" : 					{
+						"live.gain~" : [ 0.0 ],
 						"rbfi-storage" : [ "space", 5, 0.144429707296351, 0.838136675082921, "b2", 0.75, 0.375, 0.1875, 0.0, 3.321928094887363, 371411.723786805581767, 0.05, 0.2, 0, "space", 0, 0.427165462556978, 0.368738182808548, "b4", 0.75, 0.5625, 0.1875, 0.0, 3.321928094887363, 371411.723786805581767, 0.05, 0.2, 0, "space", 1, 0.427165462556978, 0.368738182808548, "[b4]", 0.75, 0.5625, 0.1875, 1.0, 3.321928094887363, 371411.723786805581767, 0.05, 0.2, 0, 0.691450471184093, 0.675106570890926, "b3", 0.5625, 0.75, 0.1875, 0.0, 3.321928094887363, 371411.723786805581767, 0.05, 0.2, 0, "space", 4, 0.691450471184093, 0.675106570890926, "[b3]", 0.5625, 0.75, 0.1875, 1.0, 3.321928094887363, 371411.723786805581767, 0.05, 0.2, 0, 0.15520421068385, 0.830617619256644, "[b3]b5", 0.75, 0.5625, 0.1875, 0.0, 3.321928094887363, 371411.723786805581767, 0.05, 0.2, 0, "space", 1, 0.15520421068385, 0.830617619256644, "[b3][b5]", 0.75, 0.5625, 0.1875, 1.0, 3.321928094887363, 371411.723786805581767, 0.05, 0.2, 0, 0.188555409348931, 0.491193684939229, "[b3]b4", 0.75, 0.75, 0.1875, 0.0, 3.321928094887363, 371411.723786805581767, 0.05, 0.2, 0, 0.322725395590953, 0.252031562611321, "[b3]b2", 0.5625, 0.75, 0.1875, 0.0, 3.321928094887363, 371411.723786805581767, 0.05, 0.2, 0, "space", 1, 0.322725395590953, 0.252031562611321, "[b3][b2]", 0.5625, 0.75, 0.1875, 1.0, 3.321928094887363, 371411.723786805581767, 0.05, 0.2, 0, 0.377005583695744, 0.697534014251357, "b5", 0.75, 0.5625, 0.1875, 0.0, 3.321928094887363, 371411.723786805581767, 0.05, 0.2, 0, "space", 0, 0.818112228481108, 0.105360304137957, "b1", 0.75, 0.375, 0.1875, 0.0, 3.321928094887363, 371411.723786805581767, 0.05, 0.2, 0, "space", 3, 0.818112228481108, 0.105360304137957, "[b1]", 0.75, 0.375, 0.1875, 1.0, 3.321928094887363, 371411.723786805581767, 0.05, 0.2, 0, 0.201940426080784, 0.326759935686597, "[b1]b5", 0.75, 0.75, 0.1875, 0.0, 3.321928094887363, 371411.723786805581767, 0.05, 0.2, 0, 0.572567815193376, 0.60376518177851, "[b1]b2", 0.5625, 0.75, 0.1875, 0.0, 3.321928094887363, 371411.723786805581767, 0.05, 0.2, 0, "space", 1, 0.572567815193376, 0.60376518177851, "[b1][b2]", 0.5625, 0.75, 0.1875, 1.0, 3.321928094887363, 371411.723786805581767, 0.05, 0.2, 0 ]
 					}
 ,
@@ -6256,7 +6257,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 2180.0, 16.0, 1226.0, 959.0 ],
+						"rect" : [ 4236.0, 0.0, 1226.0, 959.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -6284,17 +6285,17 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"fontface" : 0,
 									"id" : "obj-11",
+									"linecount" : 4,
 									"maxclass" : "o.expr.codebox",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "FullPacket", "FullPacket" ],
-									"patching_rect" : [ 127.0, 542.0, 299.0, 35.0 ],
-									"text" : "/buffers/num = /buffer/count + /curr/change"
+									"patching_rect" : [ 127.0, 542.0, 306.0, 72.0 ],
+									"text" : "/buffers/num = /buffer/count + /curr/change,\nif (/buffers/num < 1,\n  /buffers/num = 1\n)"
 								}
 
 							}
@@ -6340,7 +6341,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 127.0, 631.0, 89.0, 22.0 ],
+									"patching_rect" : [ 127.0, 659.0, 89.0, 22.0 ],
 									"text" : "s update-buffer"
 								}
 
@@ -6400,7 +6401,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "FullPacket" ],
-									"patching_rect" : [ 127.0, 594.0, 116.0, 22.0 ],
+									"patching_rect" : [ 127.0, 625.0, 116.0, 22.0 ],
 									"text" : "o.route /buffers/num"
 								}
 
@@ -7529,7 +7530,7 @@
 						"client_rect" : [ 1885, 33, 3462, 333 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 2089, 16, 3016, 219 ]
+						"storage_rect" : [ 2089, 16, 3505, 219 ]
 					}
 ,
 					"text" : "pattrstorage",
@@ -8650,7 +8651,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 291.0, 287.0, 231.0, 33.0 ],
-									"text" : "/position : [0.435819, 0.451789]"
+									"text" : "/position : [0.374972, 0.315892]"
 								}
 
 							}
@@ -14272,7 +14273,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 2054.0, 971.0, 79.0, 22.0 ],
+					"patching_rect" : [ 1487.0, 782.0, 79.0, 22.0 ],
 					"text" : "r fs-in-umenu"
 				}
 
@@ -14283,7 +14284,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1859.5, 1093.0, 48.0, 22.0 ],
+					"patching_rect" : [ 1292.5, 904.0, 48.0, 22.0 ],
 					"text" : "s fs-out"
 				}
 
@@ -14304,7 +14305,7 @@
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "FullPacket" ],
-					"patching_rect" : [ 1859.5, 1003.0, 213.5, 81.0 ],
+					"patching_rect" : [ 1292.5, 814.0, 213.5, 81.0 ],
 					"varname" : "folderselect",
 					"viewvisibility" : 1
 				}
@@ -14496,7 +14497,8 @@
 						}
 
 					}
-
+,
+					"varname" : "live.gain~"
 				}
 
 			}
@@ -14510,7 +14512,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 6.5, 664.0, 470.0, 366.0 ],
-					"text" : "/controller/joystick/R/position : [0.00392157, -0.0196078],\n/controller/trigger/L1 : 0,\n/controller/trigger/R1 : 0,\n/controller/joystick/L/position : [0.0196078, -0.0196078],\n/controller/joystick/L3 : 0,\n/controller/dpad/N : 0,\n/controller/dpad/NE : 0,\n/controller/dpad/E : 0,\n/controller/dpad/SE : 0,\n/controller/dpad/S : 0,\n/controller/dpad/SW : 0,\n/controller/dpad/W : 0,\n/controller/dpad/NW : 0,\n/controller/joystick/R3 : 0,\n/controller/misc/create : 0,\n/controller/misc/options : 0,\n/controller/button/square : 0,\n/controller/button/triangle : 0,\n/controller/trigger/R2/active : 0,\n/controller/trigger/R2/pressure : 0,\n/controller/trigger/L2/active : 0,\n/controller/trigger/L2/pressure : 0,\n/controller/misc/PS : 0,\n/controller/misc/mute : 0,\n/controller/touchpad/active : 0,\n/controller/button/x : 0,\n/controller/button/circle : 0"
+					"text" : "/controller/joystick/R/position : [0.0196078, -0.027451],\n/controller/dpad/N : 0,\n/controller/dpad/NE : 0,\n/controller/dpad/E : 0,\n/controller/dpad/SE : 0,\n/controller/dpad/S : 0,\n/controller/dpad/SW : 0,\n/controller/dpad/W : 0,\n/controller/dpad/NW : 0,\n/controller/misc/create : 0,\n/controller/joystick/L/position : [0.0117647, -0.0117647],\n/controller/joystick/R3 : 0,\n/controller/trigger/L1 : 0,\n/controller/joystick/L3 : 0,\n/controller/button/triangle : 0,\n/controller/button/square : 0,\n/controller/trigger/R1 : 0,\n/controller/trigger/L2/active : 0,\n/controller/trigger/L2/pressure : 0,\n/controller/trigger/R2/active : 0,\n/controller/trigger/R2/pressure : 0,\n/controller/misc/PS : 0,\n/controller/misc/mute : 0,\n/controller/misc/options : 0,\n/controller/touchpad/active : 0,\n/controller/button/x : 0,\n/controller/button/circle : 0"
 				}
 
 			}

@@ -13,7 +13,8 @@ autowatch = 1;
 // Route object
 var routeObjectTemplate = "script|newobject|newobj|@text|route <route>|@varname|buffer-route|@patching_position|<x>|<y>";
 var routeSizeTemplate = "script|size|buffer-route|<size>|22";
-var inletRouteConnectionTemplate = "script|connect|route-trigger|1|buffer-route|0";
+var triggerRouteConnectionTemplate = "script|connect|route-trigger|1|buffer-route|0";
+var sendRouteConnectionTemplate = "script|connect|route-send|0|buffer-route|0";
 
 // Buffer objects
 var bufferObjectTemplate = "script|newobject|newobj|@text|buffer~ <name>|@varname|<name>|@fixwidth|1|@patching_position|<x>|<y>";
@@ -34,7 +35,6 @@ var outMsg = new Array();
 *******************/
 var bufferChange = 0;
 var numBuffers = 1;
-var routeOutlets = 1;
 
 
 /***************************
@@ -91,7 +91,8 @@ function output() {
         // Recreate route
         deleteRoute();
         createRoute();
-        connectInletToRoute();
+        connectTriggerToRoute();
+        connectSendToRoute();
 
         // Create new buffer
         createBuffer();
@@ -108,8 +109,8 @@ function output() {
         // Recreate route object
         deleteRoute();
         createRoute();
-        connectInletToRoute();
-        routeOutlets = numBuffers;
+        connectTriggerToRoute();
+        connectSendToRoute();
 
         // Connect all buffers to route
         connectRouteToBuffers();
@@ -165,8 +166,14 @@ function createBuffer() {
 /**************************
 **** Connect Functions ****
 ***************************/
-function connectInletToRoute() {
-    outMsg = inletRouteConnectionTemplate.split("|");
+function connectTriggerToRoute() {
+    outMsg = triggerRouteConnectionTemplate.split("|");
+    parseIntsInArray(outMsg);
+    outlet(0, outMsg);
+}
+
+function connectSendToRoute() {
+    outMsg = sendRouteConnectionTemplate.split("|");
     parseIntsInArray(outMsg);
     outlet(0, outMsg);
 }
