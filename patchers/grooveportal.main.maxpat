@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 4034.0, -11.0, 1852.0, 959.0 ],
+		"rect" : [ 1474.0, -211.0, 2492.0, 1319.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -55,7 +55,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 1810.0, -128.0, 1387.0, 1123.0 ],
+						"rect" : [ 1810.0, -93.0, 1387.0, 1123.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -670,7 +670,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 2485.0, 166.0, 1038.0, 480.0 ],
+						"rect" : [ 2599.0, 122.0, 1038.0, 480.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2184,7 +2184,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 1779.833333333333258, 87.0, 77.0, 22.0 ],
+					"patching_rect" : [ 1784.833333333333258, 75.0, 77.0, 22.0 ],
 					"text" : "route symbol"
 				}
 
@@ -2195,7 +2195,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1901.5, 87.0, 101.0, 22.0 ],
+					"patching_rect" : [ 1906.5, 75.0, 101.0, 22.0 ],
 					"text" : "s coll-dump-bang"
 				}
 
@@ -2206,7 +2206,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1719.0, 155.0, 73.0, 22.0 ],
+					"patching_rect" : [ 1724.0, 143.0, 73.0, 22.0 ],
 					"text" : "s coll-output"
 				}
 
@@ -2218,7 +2218,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "FullPacket" ],
-					"patching_rect" : [ 1719.0, 123.0, 167.0, 22.0 ],
+					"patching_rect" : [ 1724.0, 111.0, 167.0, 22.0 ],
 					"text" : "o.pack /coll/value /coll/symbol"
 				}
 
@@ -2230,7 +2230,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1719.0, 21.0, 93.0, 22.0 ],
+					"patching_rect" : [ 1724.0, 9.0, 93.0, 22.0 ],
 					"text" : "r coll-messages"
 				}
 
@@ -2242,7 +2242,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 4,
 					"outlettype" : [ "", "", "", "" ],
-					"patching_rect" : [ 1719.0, 55.0, 201.5, 22.0 ],
+					"patching_rect" : [ 1724.0, 43.0, 201.5, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
 						"precision" : 6
@@ -7683,7 +7683,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1893.0, 923.5, 89.0, 22.0 ],
+					"patching_rect" : [ 1735.0, 923.5, 89.0, 22.0 ],
 					"text" : "r groove-matrix"
 				}
 
@@ -9132,7 +9132,6 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-72",
@@ -9694,7 +9693,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 289.0, 646.0, 231.0, 33.0 ],
-									"text" : "/position : [0.605641, 0.587979]"
+									"text" : "/position : [0.632653, 0.644975]"
 								}
 
 							}
@@ -13902,7 +13901,7 @@
 					"outlettype" : [ "FullPacket", "int" ],
 					"patching_rect" : [ 529.0, 954.0, 470.0, 257.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 1024.5, 231.0, 470.0, 257.0 ],
+					"presentation_rect" : [ 927.5, 687.0, 470.0, 257.0 ],
 					"varname" : "main-dynamic-buffer",
 					"viewvisibility" : 1
 				}
@@ -13915,7 +13914,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1583.5, 923.5, 87.0, 22.0 ],
+					"patching_rect" : [ 1504.5, 923.5, 87.0, 22.0 ],
 					"text" : "r target-groove"
 				}
 
@@ -14225,9 +14224,9 @@
 					"numoutlets" : 2,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "signal", "signal" ],
-					"patching_rect" : [ 1274.0, 956.5, 638.0, 168.0 ],
+					"patching_rect" : [ 1274.0, 956.5, 480.0, 166.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 1025.0, 572.0, 638.0, 168.0 ],
+					"presentation_rect" : [ 76.0, 946.0, 1039.0, 168.0 ],
 					"varname" : "main-dynamic-groove",
 					"viewvisibility" : 1
 				}
@@ -15610,6 +15609,8 @@
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "FullPacket" ],
 					"patching_rect" : [ 529.0, 786.0, 213.5, 81.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 1024.5, 125.0, 213.5, 81.0 ],
 					"varname" : "folderselect",
 					"viewvisibility" : 1
 				}
@@ -15644,7 +15645,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 529.0, 44.0, 475.0, 475.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 124.0, 231.0, 848.0, 848.0 ],
+					"presentation_rect" : [ 76.0, 96.0, 848.0, 848.0 ],
 					"spaces" : [ "space", 4, 0.144429707296351, 0.838136675082921, "b2", 0.75, 0.375, 0.1875, 0.0, 3.321928094887363, 371411.723786805581767, 0.05, 0.2, 0, "space", 1, 0.144429707296351, 0.838136675082921, "[b2]", 0.75, 0.375, 0.1875, 1.0, 3.321928094887363, 371411.723786805581767, 0.05, 0.2, 0, 0.427165462556978, 0.368738182808548, "b4", 0.75, 0.5625, 0.1875, 0.0, 2.592550934303119, 59123.400009836346726, 0.06, 0.354480392156863, 0, "space", 1, 0.427165462556978, 0.368738182808548, "[b4]", 0.75, 0.5625, 0.1875, 1.0, 2.592550934303119, 59123.400009836346726, 0.06, 0.354480392156863, 0, 0.691450471184093, 0.675106570890926, "b3", 0.5625, 0.75, 0.1875, 0.0, 3.321928094887363, 371411.723786805581767, 0.05, 0.2, 0, "space", 4, 0.691450471184093, 0.675106570890926, "[b3]", 0.5625, 0.75, 0.1875, 1.0, 3.321928094887363, 371411.723786805581767, 0.05, 0.2, 0, 0.15520421068385, 0.830617619256644, "[b3]b5", 0.75, 0.5625, 0.1875, 0.0, 3.321928094887363, 371411.723786805581767, 0.05, 0.2, 0, "space", 1, 0.15520421068385, 0.830617619256644, "[b3][b5]", 0.75, 0.5625, 0.1875, 1.0, 3.321928094887363, 371411.723786805581767, 0.05, 0.2, 0, 0.188555409348931, 0.491193684939229, "[b3]b4", 0.75, 0.75, 0.1875, 0.0, 3.321928094887363, 371411.723786805581767, 0.05, 0.2, 0, 0.322725395590953, 0.252031562611321, "[b3]b2", 0.5625, 0.75, 0.1875, 0.0, 3.321928094887363, 371411.723786805581767, 0.05, 0.2, 0, "space", 1, 0.322725395590953, 0.252031562611321, "[b3][b2]", 0.5625, 0.75, 0.1875, 1.0, 3.321928094887363, 371411.723786805581767, 0.05, 0.2, 0, 0.377005583695744, 0.697534014251357, "b5", 0.75, 0.5625, 0.1875, 0.0, 3.321928094887363, 371411.723786805581767, 0.05, 0.2, 0, "space", 1, 0.377005583695744, 0.697534014251357, "[b5]", 0.75, 0.5625, 0.1875, 1.0, 3.321928094887363, 371411.723786805581767, 0.05, 0.2, 0 ],
 					"varname" : "rbfi-storage",
 					"xhaircolor" : [ 0.999995052814484, 1.0, 1.0, 1.0 ]
@@ -15775,7 +15776,7 @@
 					"maxclass" : "ezdac~",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1274.0, 1209.5, 79.0, 79.0 ]
+					"patching_rect" : [ 1274.0, 1209.0, 76.0, 76.0 ]
 				}
 
 			}
@@ -15789,7 +15790,9 @@
 					"orientation" : 1,
 					"outlettype" : [ "signal", "signal", "", "float", "list" ],
 					"parameter_enable" : 1,
-					"patching_rect" : [ 1274.0, 1142.5, 638.0, 47.0 ],
+					"patching_rect" : [ 1274.0, 1142.5, 480.0, 47.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 1274.0, 1142.5, 638.0, 47.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_longname" : "live.gain~",
@@ -15816,7 +15819,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 6.5, 664.0, 470.0, 366.0 ],
-					"text" : "/controller/joystick/R/position : [0.00392157, -0.0196078],\n/controller/button/x : 0,\n/controller/joystick/L/position : [0.0117647, -0.027451],\n/controller/trigger/R2/active : 0,\n/controller/trigger/R2/pressure : 0,\n/controller/joystick/L3 : 0,\n/controller/dpad/N : 0,\n/controller/dpad/NE : 0,\n/controller/dpad/E : 0,\n/controller/dpad/SE : 0,\n/controller/dpad/S : 0,\n/controller/dpad/SW : 0,\n/controller/dpad/W : 0,\n/controller/dpad/NW : 0,\n/controller/joystick/R3 : 0,\n/controller/button/circle : 0,\n/controller/misc/create : 0,\n/controller/misc/options : 0,\n/controller/button/triangle : 0,\n/controller/button/square : 0,\n/controller/trigger/L1 : 0,\n/controller/trigger/R1 : 0,\n/controller/trigger/L2/active : 0,\n/controller/trigger/L2/pressure : 0,\n/controller/misc/PS : 0,\n/controller/misc/mute : 0,\n/controller/touchpad/active : 0"
+					"text" : "/controller/joystick/L/position : [0.0117647, -0.0117647],\n/controller/joystick/R/position : [0.0196078, -0.0352941],\n/controller/joystick/L3 : 0,\n/controller/joystick/R3 : 0,\n/controller/button/triangle : 0,\n/controller/button/x : 0,\n/controller/button/circle : 0,\n/controller/trigger/R2/active : 0,\n/controller/trigger/R2/pressure : 0,\n/controller/dpad/N : 0,\n/controller/dpad/NE : 0,\n/controller/dpad/E : 0,\n/controller/dpad/SE : 0,\n/controller/dpad/S : 0,\n/controller/dpad/SW : 0,\n/controller/dpad/W : 0,\n/controller/dpad/NW : 0,\n/controller/misc/create : 0,\n/controller/misc/options : 0,\n/controller/button/square : 0,\n/controller/trigger/L1 : 0,\n/controller/trigger/R1 : 0,\n/controller/trigger/L2/active : 0,\n/controller/trigger/L2/pressure : 0,\n/controller/misc/PS : 0,\n/controller/misc/mute : 0,\n/controller/touchpad/active : 0"
 				}
 
 			}
@@ -16223,7 +16226,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-150", 1 ],
-					"midpoints" : [ 1789.333333333333258, 116.5, 1876.5, 116.5 ],
+					"midpoints" : [ 1794.333333333333258, 104.5, 1881.5, 104.5 ],
 					"source" : [ "obj-31", 0 ]
 				}
 
