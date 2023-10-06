@@ -1,6 +1,6 @@
 /*
-    Handles formatting messages to send to `thispatcher` object for
-    dynamically creating groove~ objects and connecting them to a `route` object.
+    Handles setting matrixctrl Left / Right channel values based
+    on cursor position with respect to each point in the layer.
 */
 
 inlets = 3;
