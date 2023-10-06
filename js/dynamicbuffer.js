@@ -17,7 +17,7 @@ var triggerRouteConnectionTemplate = "script|connect|route-trigger|1|buffer-rout
 var sendRouteConnectionTemplate = "script|connect|route-send|0|buffer-route|0";
 
 // Buffer objects
-var bufferObjectTemplate = "script|newobject|newobj|@text|buffer~ <name>|@varname|<name>|@fixwidth|1|@patching_position|<x>|<y>";
+var bufferObjectTemplate = "script|newobject|newobj|@text|buffer~ <name> 1000|@varname|<name>|@fixwidth|1|@patching_position|<x>|<y>";
 var routeBufferConnectionTemplate = "script|connect|buffer-route|<outlet>|<buffer>|0";
 
 // Misc scripting
