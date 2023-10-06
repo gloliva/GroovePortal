@@ -145,15 +145,15 @@ function output() {
         connectSubRouteToAmp(grooveName);
         connectSigToGroove(grooveName);
 
-        // Resize matrixctrl object
-        resizeMatrixctrl();
-
         // Recreate matrix object
         deleteMatrix();
         createMatrix();
         connectMatrixctrlToMatrix();
         connectAmpsToMatrix();
         connectMatrixToOutlets();
+
+        // Resize matrixctrl object
+        resizeMatrixctrl();
     // Decrease grooves
     } else if (grooveChange === -1) {
         var grooveName = "g" + numGrooves;
@@ -180,15 +180,15 @@ function output() {
         // Connect all sub routes to global route
         connectGlobalRouteToSubRoutes();
 
-        // Resize matrixctrl object
-        resizeMatrixctrl();
-
         // Recreate matrix object
         deleteMatrix();
         createMatrix();
         connectMatrixctrlToMatrix();
         connectAmpsToMatrix();
         connectMatrixToOutlets();
+
+        // Resize matrixctrl object
+        resizeMatrixctrl();
     }
 }
 
@@ -384,6 +384,13 @@ function resizeMatrixctrl() {
     // Change presentation rect and size
     outMsg = new Array();
     outMsg.push("presentation_rect", 0, 23, size, 144);
+    outlet(1, outMsg);
+
+    // Update amplitudes
+    outMsg = new Array();
+    for (var i = 0; i < numGrooves; i++) {
+        outMsg.push(i, 0, 0.5, i, 1, 0.5);
+    }
     outlet(1, outMsg);
 }
 
