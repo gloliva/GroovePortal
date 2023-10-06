@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 1474.0, -211.0, 2492.0, 1319.0 ],
+		"rect" : [ 2754.0, -211.0, 788.0, 1319.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -1086,7 +1086,6 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"annotation" : "Send to Coll Object",
@@ -1924,7 +1923,7 @@
 			}
 , 			{
 				"box" : 				{
-					"bgcolor" : [ 0.905882352941176, 0.086274509803922, 0.086274509803922, 0.35 ],
+					"bgcolor" : [ 0.905882352941176, 0.086274509803922, 0.086274509803922, 1.0 ],
 					"fontface" : 0,
 					"fontsize" : 14.0,
 					"id" : "obj-8",
@@ -1934,7 +1933,8 @@
 					"patching_rect" : [ 1071.0, 473.5, 269.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 111.0, 25.0, 357.0, 22.0 ],
-					"text" : "No File Loaded (Empty)"
+					"text" : "No File Loaded (Empty)",
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
 			}
@@ -1976,7 +1976,8 @@
 					"patching_rect" : [ 25.0, 768.0, 97.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 320.0, 1.0, 94.0, 22.0 ],
-					"text" : "Total Buffers"
+					"text" : "Total Buffers",
+					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 
 			}
@@ -2006,6 +2007,7 @@
 			}
 , 			{
 				"box" : 				{
+					"bgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"fontsize" : 14.0,
 					"id" : "obj-14",
 					"ignoreclick" : 1,
@@ -2058,7 +2060,9 @@
 			}
 , 			{
 				"box" : 				{
+					"bgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"buffername" : "b1",
+					"gridcolor" : [ 0.686274509803922, 0.686274509803922, 0.686274509803922, 1.0 ],
 					"id" : "obj-87",
 					"maxclass" : "waveform~",
 					"numinlets" : 5,
@@ -2066,7 +2070,8 @@
 					"outlettype" : [ "float", "float", "float", "float", "list", "" ],
 					"patching_rect" : [ 25.0, 553.5, 446.0, 167.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 49.0, 468.0, 206.0 ]
+					"presentation_rect" : [ 0.0, 49.0, 468.0, 206.0 ],
+					"waveformcolor" : [ 0.905882352941176, 0.086274509803922, 0.086274509803922, 1.0 ]
 				}
 
 			}
@@ -2198,6 +2203,14 @@
 			}
 , 			{
 				"box" : 				{
+					"bgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"bgfillcolor_angle" : 270.0,
+					"bgfillcolor_autogradient" : 0.0,
+					"bgfillcolor_color" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"bgfillcolor_color1" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"bgfillcolor_color2" : [ 0.2, 0.2, 0.2, 1.0 ],
+					"bgfillcolor_proportion" : 0.5,
+					"bgfillcolor_type" : "color",
 					"fontface" : 0,
 					"fontsize" : 14.0,
 					"id" : "obj-179",
@@ -2627,7 +2640,7 @@
 					"destination" : [ "obj-995", 0 ],
 					"source" : [ "obj-213", 2 ],
 					"watchpoint_flags" : 2,
-					"watchpoint_id" : 2
+					"watchpoint_id" : 3
 				}
 
 			}

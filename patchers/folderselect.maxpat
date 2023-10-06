@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 1880.0, -70.0, 1296.0, 801.0 ],
+		"rect" : [ 2450.0, -47.0, 869.0, 801.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -135,7 +135,7 @@
 					"comment" : "Messages to \"Umenu\" object",
 					"hint" : "Messages to \"Umenu\" object",
 					"id" : "obj-2",
-					"index" : 2,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -231,6 +231,7 @@
 					"presentation_linecount" : 2,
 					"presentation_rect" : [ 0.0, 4.5, 210.0, 42.0 ],
 					"text" : "Drop Samples Folder HERE",
+					"textcolor" : [ 1.0, 0.0, 0.0, 1.0 ],
 					"textjustification" : 1
 				}
 
@@ -241,7 +242,7 @@
 					"comment" : "Messages to \"Folder\" object",
 					"hint" : "Messages to \"Folder\" object",
 					"id" : "obj-43",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -256,7 +257,7 @@
 					"comment" : "File OSC",
 					"hint" : "File OSC",
 					"id" : "obj-41",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -315,10 +316,18 @@
 			}
 , 			{
 				"box" : 				{
+					"bgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"bgfillcolor_angle" : 270.0,
+					"bgfillcolor_autogradient" : 0.0,
+					"bgfillcolor_color" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"bgfillcolor_color1" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"bgfillcolor_color2" : [ 0.2, 0.2, 0.2, 1.0 ],
+					"bgfillcolor_proportion" : 0.5,
+					"bgfillcolor_type" : "color",
 					"fontface" : 0,
 					"fontsize" : 14.0,
 					"id" : "obj-1",
-					"items" : [ "anton.aif", ",", "brushes.aif", ",", "cello-f2.aif", ",", "cherokee.aif", ",", "drumLoop.aif", ",", "duduk.aif", ",", "jongly.aif", ",", "rainstick.aif", ",", "senita-8ch.wav", ",", "sho0630.aif", ",", "vibes-a1.aif" ],
+					"items" : "<empty>",
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -520,7 +529,21 @@
 				}
 
 			}
- ]
+ ],
+		"dependency_cache" : [ 			{
+				"name" : "o.expr.codebox.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "o.pack.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "o.union.mxo",
+				"type" : "iLaX"
+			}
+ ],
+		"autosave" : 0
 	}
 
 }
