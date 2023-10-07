@@ -45,9 +45,6 @@ function extractBuffers() {
 
 
 function mutePreviousLayer() {
-    post(currNames);
-    post(prevNames);
-    post();
     var muteNames = new Array();
     var buf;
     var mute;
