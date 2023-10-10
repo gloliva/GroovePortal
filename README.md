@@ -140,21 +140,36 @@ Each sample is synced to an adjustable global tempo. This tempo can be adjusted 
 
 ### Dynamic Buffers and Grooves
 
-In a typical Max program, `buffer~` and `groove~` objects are placed manually and therefore have a set limit to how many audio files can be used at one time. The dynamic.buffer~ and dynamic.groove~ abstractions were built to support theoretically unlimited `buffer~` and `groove~` objects (with the true limit being as many as Max / your computer can handle).
+In a typical Max program, `buffer~` and `groove~` objects are placed manually and therefore have a set limit to how many audio files can be used at one time. The [dynamic.buffer~](https://github.com/gloliva/GroovePortal/blob/master/patchers/dynamic.buffer~.maxpat) and [dynamic.groove~](https://github.com/gloliva/GroovePortal/blob/master/patchers/dynamic.groove~.maxpat) abstractions were built to support theoretically unlimited `buffer~` and `groove~` objects (with the true limit being as many as Max / your computer can handle).
 
-These abstractions make use of Max scripting to dynamically create the `buffer~` and `groove~` objects, as well as any additional objects needed to access or manipulate these objects (such as `route` or `*~` objects). The [dynamicbuffer.js](https://github.com/gloliva/GroovePortal/blob/master/js/dynamicbuffer.js) and [dynamicgroove.js](https://github.com/gloliva/GroovePortal/blob/master/js/dynamicgroove.js) Javascript files handle creating the scripting messages to create the `buffer~` and `groove~` objects, resize or recreate other helper objects, and then route them all together, passing out these messages to the `thispatcher` object.
+These abstractions make use of Max scripting to dynamically create the `buffer~` and `groove~` objects, as well as any additional objects needed to access or manipulate these objects (such as `route` or `*~` objects). The [dynamicbuffer.js](https://github.com/gloliva/GroovePortal/blob/master/js/dynamicbuffer.js) and [dynamicgroove.js](https://github.com/gloliva/GroovePortal/blob/master/js/dynamicgroove.js) Javascript files handle creating the scripting messages to create the `buffer~` and `groove~` objects, resize or recreate other helper objects, and then route them all together, passing out these messages to a `thispatcher` object.
 
-Dynamically changing number of Buffers:  
+**Dynamically Change Number of Buffers:**  
 ![dynamic_buffer_gif](media/gifs/dynamicbuffer.gif)
 
-Dynamically changing number of Grooves:  
+**Dynamically Change Number of Grooves:**  
 ![dynamic_groove_gif](media/gifs/dynamicgroove.gif)
 
 ### RBFI Multidimensionality
 
+**Add Points and Warps:**  
+![add_points_and_warps_gif](media/gifs/AddingPointsAndWarps.gif)
+
 ### Saving and Restoring Presets
 
+GroovePortal can save all useful information into a Preset to later be recalled: all point placements and properties, performance properties, warps and layers, audio files and buffer configurations can be saved. The application even remembers which files were loaded into which buffers and reloads them for you when recalled.
+
+This is done through a combinantion of Pattr and Coll storage. Multiple `coll` objects are used to save information such as available warps and which audio files map to which buffers. By default, however, `coll` objects do not work with `pattr` or `autopattr` objects. In order to avoid having to manage multiple output files to save program states, custom logic has been implemented to support saving `coll` output with the Pattr system. When a preset is saved, each `coll` object dumps their contents to a Max message which is saved via Pattr. When a preset is loaded, this message is restored via Pattr and then parsed into a format that can be reloaded into `coll`. This allows all relevant data to be saved via a single storage method, making saving and loading presets extremely simple from the user perspective.
+
+**Loading Two Different Presets:**  
+![loading_presets](media/gifs/LoadingPresets.gif)
+
 ### PS5 Controller Support
+
+The [controller.ps5](https://github.com/gloliva/GroovePortal/blob/master/patchers/controller.ps5.maxpat) abstraction is a visual wrapper around the [dsc.ds5.usb](https://github.com/zetenynagy/dsc.max/blob/main/dsc.ds5.usb.maxpat) object, which in turn is just a wrapper around the `hi` object. The `controller.ps5` object provides a visual representation for the actions of the performer, and packages the output up as an OSC bundle for easy use across the patch.
+
+**Overview of Controller:**  
+![ps5_controller_gif](media/gifs/ps5controller.gif)
 
 ## Future Ambitions
 
