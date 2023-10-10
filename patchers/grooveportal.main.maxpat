@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 1474.0, -211.0, 2492.0, 1319.0 ],
+		"rect" : [ 1474.0, -211.0, 2173.0, 1319.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -39,6 +39,30 @@
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-17",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1202.0, 910.5, 74.0, 22.0 ],
+					"text" : "loadmess -5"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-15",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1204.0, 1155.5, 70.0, 22.0 ],
+					"text" : "loadmess 1"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"fontface" : 1,
 					"fontsize" : 24.0,
@@ -22733,7 +22757,7 @@
 					"name" : "dynamic.groove~.maxpat",
 					"numinlets" : 3,
 					"numoutlets" : 2,
-					"offset" : [ 1.0, -22.0 ],
+					"offset" : [ 0.0, -18.0 ],
 					"outlettype" : [ "signal", "signal" ],
 					"patching_rect" : [ 1160.0, 515.0, 480.0, 171.0 ],
 					"presentation" : 1,
@@ -24767,6 +24791,14 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-14", 0 ],
+					"midpoints" : [ 1213.5, 1185.25, 1291.75, 1185.25 ],
+					"source" : [ "obj-15", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-154", 0 ],
 					"source" : [ "obj-150", 0 ]
 				}
@@ -24791,6 +24823,14 @@
 				"patchline" : 				{
 					"destination" : [ "obj-28", 0 ],
 					"source" : [ "obj-16", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-12", 0 ],
+					"midpoints" : [ 1211.5, 937.75, 1291.75, 937.75 ],
+					"source" : [ "obj-17", 0 ]
 				}
 
 			}
