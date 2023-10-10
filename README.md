@@ -13,7 +13,7 @@ GroovePortal's core features are:
 - Adjust blend strength and timestretching parameters in real-time.
 - Save spaces, sample placements, warping parameters, and more as presets to be recalled later.
 
-GroovePortal is *not* an Audio / Clip editor or a DAW; there are many existing tools that perform these functions. The intention of GroovePortal is to be a live performance tool for mixing audio samples in unique ways according to a spatial relationship defined by the performer.
+GroovePortal is *not* an Audio editor or DAW; there are many existing tools that perform these functions well. The intention of GroovePortal is to be a live performance tool for mixing audio samples according to the unique spatial relationship defined by the performer.
 
 ![presentation_mode](photos/patchers/PresentationMode.png)
 
@@ -32,11 +32,15 @@ If you wish to view the Max patches in the [patchers](https://github.com/gloliva
 
 ## Mechanics
 
-### Warping, Layers, and Multidimensionality
+### Layers, Warping, and Multidimensionality
 
-Only one 2D plane, or "layer", is seen at a time. Points are placed on this layer to represent a horizontal and vertical relationship between these points in a 2D space. As the user moves the cursor throughout this space, the samples are blended together depending on the strength
+Only one 2D plane, or "layer", is visualized and explored at a time. Points are placed on this layer to represent a horizontal and vertical relationship between these points in the current layer. As the user moves the cursor throughout this space, the samples are blended together depending on the "strength" of the Point (see [Point Parameters](###point-parameters) below). <!-- markdownlint-disable-line -->
 
-This is the "multidimensional" component of GroovePortal, each and every point can be warped into to create another layer of samples. This can be used to create extremely deep and "skewed trees", highly dense and "balanced tree", and everything in between. It is the user who decides which points can be warped into and how many layers exist within each point depending on the relationship they are trying to represent and explore.
+Each point can be "warped" into, which creates another another layer *within* the point. This point then acts as a gateway or "portal" to and from these two layers.
+
+This is the "multidimensional" component of GroovePortal, each and every point can be warped into to create another layer of samples that is centered around the warp point / portal. This can be used to create extremely deep and "skewed trees", highly dense and "balanced trees", and everything in between. Going deeper into each point and adding additional layers increases the dimensions of the performane space.
+
+The user decides which points can be warped into and how many layers exist within each point depending on the relationship they are trying to represent and explore.
 
 ### Point Parameters
 
@@ -46,15 +50,31 @@ Each point's "strength" (its amplitude) is set by its inner (full line) and oute
 
 In RBFI mode, the user can select points and increase / decrease their inner and outer circle radii to adjust the sample's influence within the current layer.
 
-### Sample Centers
-
-When a sample is warped into, it becomes the Focal Point of the layer. This can be thought of as a "Sample Center", very similar the concept of "Tonal Centers" in Music Theory. Each additional sample point added to this layer has some relationship to the Sample Center, allowing the layer to have its own musical aesthetic with respect to this sample center.
-
 ### Spatial Audio
 
-If the user has a 4-channel output setup, this functionality can be extended to support the vertical relationship between the points of each layer to affect the output of channels 3 and 4.
+The spatial relationship between the different points is explored in many ways:
 
-### Blend and Tempo Changes
+- The vertical and horizontal distance between the points in the same layer. The distance at which points are placed away from each other determines how the points interact and blend when traversing through the space.
+- Additionally, as the player traverses a single layer, a point to the left of the cursor will have a stronger output from the "Left" or 1st channel, and a point to the right of the cursor will have a stronger output from the "Right" or 2nd channel. If the user has a 4-channel output setup, this functionality can be extended to support the vertical relationship between the points of each layer to affect the output of channels 3 and 4.
+- The depth and dimensional distance between warp points across different layers. When a point is warped into, it creates a new world of sound that is spawned from that point. The warp point can be thought of as the "ending" of the previous layer and the "beginning" of the new layer.
+
+### Sample Centers
+
+When a sample is warped into, it becomes the Focal Point of the layer. This can be thought of as a "Sample Center", very similar the concept of "Tonal Centers" in Music Theory. Each additional sample point added to this layer can be then thought to have a relationship to the Sample Center: pulling away from the center as the cursor moves outside of the center's outer circle, and resolving back to the center as the cursor moves closer, acting like the tonic of a particular key.
+
+### Blend Modulation
+
+The strength of the mixing or "blending" of points can be adjusted to support different performance needs.
+
+At a Blend Strength of 1, the strength of each point's *outer circle* is maximized, so all points can be heard roughly across the whole space. This is useful if each sample is an individual track of a complete song (or section of a song), and the performer wants to focus mostly on traversing the different layers (which could correspond to changing songs or changing sections).
+
+At a Blend Strength of 10, the strength of each point's *inner circle* is maximized, meaning that the closest point to the cursor will dominate the space. This is useful when the performer wants to transition between complete songs, such as in a DJ setting.
+
+Blend can be adjusted between 1 and 10 to support many different types of mixing styles, and can be adjusted on the fly to change between styles within a single performance.
+
+### Tempo Modulation
+
+Each sample is synced to an adjustable global tempo. This tempo can be adjusted both before and during performance mode to dynamically change the performance's tempo.
 
 ## Controls
 
