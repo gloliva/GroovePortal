@@ -1,0 +1,1 @@
+open thispatcherfolder "Macintosh HD:/Users/gloliva/workspace/projects/grooveportal/js"include "Macintosh HD:/Users/gloliva/workspace/projects/grooveportal/data/presets.json"
