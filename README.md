@@ -1,21 +1,20 @@
-![title_card](photos/title/GroovePortalTitle.jpeg) <!-- markdownlint-disable-line -->
+![title_card](media/title/GroovePortalTitle.jpeg) <!-- markdownlint-disable-line -->
 
 ## Overview
 
-Groove Portal is a flexible Multidimensional Audio Mixer intended for live performance. Explore the spatial relationship between samples as you place Audio Samples onto a multidimensional space and travel through it to blend the samples together.
+Step into the world of GroovePortal, your gateway to a dynamic and immersive audio mixing experience designed for live performances. Discover a new dimension of sound manipulation as you venture into a multidimensional space, blending samples across many layers of sound.
 
-GroovePortal's core features are:
+GroovePortal offers a range of powerful features, including:
 
-- Dynamically add new buffer~ and groove~ objects to support as many samples as your computer can handle.
-- Place down samples on a single Layer to create a spatial relationship between them.
-- Each Sample can be "warped" into, creating a new layer that can be customized around that sample.
-- Traverse the sample space to mix and blend the audio samples with respect to their spatial relationship.
-- Adjust blend strength and timestretching parameters in real-time.
-- Save spaces, sample placements, warping parameters, and more as presets to be recalled later.
+- Dynamically add new buffer~ and groove~ objects to support loading as many samples as your computer can handle.
+- Create unique Sample Spaces comprising multiple layers that can be traversed, allowing you to craft intricate spatial relationships between audio samples.
+- Navigate the sample space, mixing and blending audio samples based on their spatial properties.
+- Real-time adjustments for blend strength and timestretching parameters.
+- Save your configurations, sample placements, warp points, and more as presets for instant recall.
 
-GroovePortal is *not* an Audio editor or DAW; there are many existing tools that perform these functions well. The intention of GroovePortal is to be a live performance tool for mixing audio samples according to the unique spatial relationship defined by the performer.
+It's essential to note that GroovePortal is *not* an audio editor or DAW. Instead, it stands as a dedicated live performance tool, empowering artists to craft audio experiences that respond to the performer's unique spatial vision.
 
-![presentation_mode](photos/patchers/PresentationMode.png)
+![presentation_mode](media/patchers/PresentationMode.png)
 
 ## How to Download
 
@@ -34,11 +33,11 @@ If you wish to view the Max patches in the [patchers](https://github.com/gloliva
 
 ### Layers, Warping, and Multidimensionality
 
-Only one 2D plane, or "layer", is visualized and explored at a time. Points are placed on this layer to represent a horizontal and vertical relationship between these points in the current layer. As the user moves the cursor throughout this space, the samples are blended together depending on the "strength" of the Point (see [Point Parameters](###point-parameters) below). <!-- markdownlint-disable-line -->
+Only one 2D plane, or "layer", is visualized and explored at a time. Points are placed on this layer to represent a horizontal and vertical relationship between them. As the user moves the cursor throughout this space, the samples are blended together depending on the "strength" of the Point (see [Point Parameters](#point-parameters) below).
 
 Each point can be "warped" into, which creates another another layer *within* the point. This point then acts as a gateway or "portal" to and from these two layers.
 
-This is the "multidimensional" component of GroovePortal, each and every point can be warped into to create another layer of samples that is centered around the warp point / portal. This can be used to create extremely deep and "skewed trees", highly dense and "balanced trees", and everything in between. Going deeper into each point and adding additional layers increases the dimensions of the performane space.
+This is the multidimensional component of GroovePortal, each and every point can be warped into to create another layer of samples that is centered around the warp point / portal. This can be used to create extremely deep and "skewed trees", highly dense and "balanced trees", and everything in between. Going deeper into each point and adding additional layers increases the dimensions of the performane space.
 
 The user decides which points can be warped into and how many layers exist within each point depending on the relationship they are trying to represent and explore.
 
@@ -46,7 +45,7 @@ The user decides which points can be warped into and how many layers exist withi
 
 All points correspond to a specific buffer~ instance. These buffer objects will typically have a sample loaded into them, but do not need to if the user wishes to use a specific buffer as a "dead" or "silent" zone.
 
-Each point's "strength" (its amplitude) is set by its inner (full line) and outer (dashed line) circles. The inner circle dictates where that sample will be favored the strongest. The outer circle determines where the sample still has some influence, with a diminishing value as the cursor moves further away from the sample center. Outside of the outer circle, the sample has little to no strength and is likely to be muted.
+Each point's strength (its amplitude) is set by its inner (full line) and outer (dashed line) circles. The inner circle dictates where that sample will be favored the strongest. The outer circle determines where the sample still has some influence, with a diminishing value as the cursor moves further away from the sample center. Outside of the outer circle, the sample has little to no strength and is likely to be muted.
 
 In RBFI mode, the user can select points and increase / decrease their inner and outer circle radii to adjust the sample's influence within the current layer.
 
@@ -76,18 +75,22 @@ Blend can be adjusted between 1 and 10 to support many different types of mixing
 
 Each sample is synced to an adjustable global tempo. This tempo can be adjusted both before and during performance mode to dynamically change the performance's tempo.
 
+## Program Layout
+
+![layout_overview](media/patchers/PresentationOverview.jpeg)
+
 ## Controls
 
 ### Switch Modes
 
-![mode_switch](photos/controls/ModeSwitch.jpg)
+![mode_switch](media/controls/ModeSwitch.jpg)
 `L3` - Switch to Buffer Mode  
 `R3` - Switch to RBFI Mode  
 `L3 + R3` - Press both L3 and R3 at the same time to switch to Performance Mode
 
 ### Buffer Mode
 
-![buffer_mode_controls](photos/controls/BufferModeControls.jpg)
+![buffer_mode_controls](media/controls/BufferModeControls.jpg)
 `Left / Right D-pad` - Cycle through Buffers  
 `Up / Down D-Pad` - Cycle through Samples
 
@@ -99,7 +102,7 @@ Each sample is synced to an adjustable global tempo. This tempo can be adjusted 
 
 ### RBFI Mode
 
-![rbfi_mode_controls](photos/controls/RBFIModeControls.jpg)
+![rbfi_mode_controls](media/controls/RBFIModeControls.jpg)
 `Left Joystick` - Fast traversal through RBFI space  
 `Right Joystick` - Slow traversal through RBFI space  
 `Left / Right D-pad` - Cycle through Buffers  
@@ -120,7 +123,7 @@ Each sample is synced to an adjustable global tempo. This tempo can be adjusted 
 
 ### Performance Mode
 
-![perform_mode_controls](photos/controls/PerformModeControls.jpg)
+![perform_mode_controls](media/controls/PerformModeControls.jpg)
 `Left Joystick` - Fast traversal through RBFI space  
 `Right Joystick` - Slow traversal through RBFI space
 
@@ -136,6 +139,16 @@ Each sample is synced to an adjustable global tempo. This tempo can be adjusted 
 ## Technical Details
 
 ### Dynamic Buffers and Grooves
+
+In a typical Max program, `buffer~` and `groove~` objects are placed manually and therefore have a set limit to how many audio files can be used at one time. The dynamic.buffer~ and dynamic.groove~ abstractions were built to support theoretically unlimited `buffer~` and `groove~` objects (with the true limit being as many as Max / your computer can handle).
+
+These abstractions make use of Max scripting to dynamically create the `buffer~` and `groove~` objects, as well as any additional objects needed to access or manipulate these objects (such as `route` or `*~` objects). The [dynamicbuffer.js](https://github.com/gloliva/GroovePortal/blob/master/js/dynamicbuffer.js) and [dynamicgroove.js](https://github.com/gloliva/GroovePortal/blob/master/js/dynamicgroove.js) Javascript files handle creating the scripting messages to create the `buffer~` and `groove~` objects, resize or recreate other helper objects, and then route them all together, passing out these messages to the `thispatcher` object.
+
+Dynamically changing number of Buffers:  
+![dynamic_buffer_gif](media/gifs/dynamicbuffer.gif)
+
+Dynamically changing number of Grooves:  
+![dynamic_groove_gif](media/gifs/dynamicgroove.gif)
 
 ### RBFI Multidimensionality
 
