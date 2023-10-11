@@ -7,7 +7,7 @@ Step into the world of GroovePortal, your gateway to a dynamic and immersive aud
 GroovePortal offers a range of powerful features, including:
 
 - Dynamically add new buffer~ and groove~ objects to support loading as many samples as your computer can handle.
-- Creating unique Sample Spaces comprising multiple layers that can be traversed, allowing you to craft intricate spatial relationships between audio samples.
+- Creating unique sample spaces comprising multiple layers that can be traversed, allowing you to craft intricate spatial relationships between audio samples.
 - Navigating the sample space to mix and blend audio samples based on their spatial properties.
 - Adjusting blend strength and timestretching parameters in real-time.
 - Saving your configurations, sample placements, portals, and more as presets for instant recall.
@@ -79,11 +79,19 @@ Blend can be adjusted between 1 and 10 to support many different types of mixing
 
 Each sample is synced to an adjustable global tempo. This tempo can be adjusted both before and during performance mode to dynamically change the performance's tempo.
 
-## Program Layout
+## How To Use
+
+There are three distinct modes for GroovePortal:
+
+1. **Prepare** (*Buffer Mode*): In Buffer Mode, the user interacts and sets up the buffers. This includes setting the number of buffers, and loading samples into specific buffers. The user can also preview the sample that is loaded into each buffer.
+2. **Establish** (*RBFI Mode*): In RBFI Mode, the user interacts with the RBFI space by placing down points, changing the size and scale of each point, and adding additional layers by creating portals. Additionally, the user can adjust the blend strength (how each point's amplitude is calculated) and the tempo (timestretching parameters). The user can save these configurations to a preset, and load previously saved presets in RBFI mode. The user can also activate Audio Preview mode to hear to what the current configuration sounds like, and make adjustments as necessary.
+3. **Explore** (*Performance Mode*): In Performance mode, the user traverses the space they set up in RBFI mode in order to mix the samples (corresponding to the placed points) in creative ways. How the samples are mixed depends on the placement of the points, their circle radii, the blend strength, and the position of the cursor. The user can warp through portals (that were set up in RBFI mode) in order to transition to new sound spaces. Both the blend strength and tempo parameters can be adjusted on-the-fly to add dynamics to the performance.
+
+### Program Layout
 
 ![layout_overview](media/patchers/PresentationOverview.jpeg)
 
-## Controls
+### Controls
 
 Most major functionality of GroovePortal is controlled by a DualSense Playstation 5 controller.
 
@@ -93,14 +101,14 @@ Once the application is opened, you will need to select the `DualSense Wireless 
 
 ![ps5_device_settings](media/patchers/PS5DeviceSettings.png)
 
-### Switch Modes
+#### Switch Modes
 
 ![mode_switch](media/controls/ModeSwitch.jpg)
 `L3` - Switch to Buffer Mode  
 `R3` - Switch to RBFI Mode  
 `L3 + R3` - Press both L3 and R3 at the same time to switch to Performance Mode
 
-### Buffer Mode
+#### Buffer Mode
 
 ![buffer_mode_controls](media/controls/BufferModeControls.jpg)
 `Left / Right D-pad` - Cycle through Buffers  
@@ -112,7 +120,7 @@ Once the application is opened, you will need to select the `DualSense Wireless 
 
 `L1 / R1` - Decrease / Increase Number of Buffers and Grooves
 
-### RBFI Mode
+#### RBFI Mode
 
 ![rbfi_mode_controls](media/controls/RBFIModeControls.jpg)
 `Left Joystick` - Fast traversal through RBFI space  
@@ -133,7 +141,7 @@ Once the application is opened, you will need to select the `DualSense Wireless 
 `Media Button`  - Load Current Preset  
 `Options Button` - Save to Current Preset
 
-### Performance Mode
+#### Performance Mode
 
 ![perform_mode_controls](media/controls/PerformModeControls.jpg)
 `Left Joystick` - Fast traversal through RBFI space  
