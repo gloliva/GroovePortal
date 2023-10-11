@@ -39,7 +39,7 @@ If you wish to view the Max patches in the [patchers](https://github.com/gloliva
 
 Only one 2D plane, or "layer", is visualized and explored at a time. Points are placed on this layer to represent a horizontal and vertical relationship between them. As the user moves the cursor throughout this space, the samples are blended together depending on the "strength" of the Point (see [Point Parameters](#point-parameters) below).
 
-Each point can be "warped" into, which creates another another layer *within* the point. This point then acts as a gateway or "portal" between these two layers.
+Each point can be "warped" into, which creates another layer *within* the point. This point then acts as a gateway or "portal" between these two layers.
 
 This is the multidimensional component of GroovePortal, each and every point can be warped into to create another layer of samples that is centered around the portal. This can be used to create extremely deep and "skewed trees", highly dense and "balanced trees", and everything in between. Going deeper into each point and adding additional layers increases the dimensions of the performane space.
 
