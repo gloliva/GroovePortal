@@ -85,6 +85,14 @@ Each sample is synced to an adjustable global tempo. This tempo can be adjusted 
 
 ## Controls
 
+Most major functionality of GroovePortal is controlled by a DualSense Playstation 5 controller.
+
+You will need to plug the controller into you computer *before* starting the GroovePortal application.
+
+Once the application is opened, you will need to select the `DualSense Wireless Controller` option from the Dropdown menu and then enable the Toggle in the `PS5 Controller` abstraction. See the below photo for details:
+
+![ps5_device_settings](media/patchers/PS5DeviceSettings.png)
+
 ### Switch Modes
 
 ![mode_switch](media/controls/ModeSwitch.jpg)
