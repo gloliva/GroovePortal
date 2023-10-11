@@ -16,7 +16,7 @@ It's essential to note that GroovePortal is *not* an audio editor or DAW. Instea
 
 ![presentation_mode](media/patchers/PresentationMode.png)
 
-## Click Below to Watch a Live Demo of GroovePortal
+## Click Below to Watch a Live Demo of GroovePortal in Performance Mode
 
 [![youtube_demo](media/title/demo_title_card.png)](https://www.youtube.com/watch?v=gtI-TLkuCc0)
 
@@ -178,8 +178,6 @@ The [controller.ps5](https://github.com/gloliva/GroovePortal/blob/master/patcher
 
 **Overview of Controller:**  
 ![ps5_controller_gif](media/gifs/ps5controller.gif)
-
-## Future Ambitions
 
 ## Credits
 
