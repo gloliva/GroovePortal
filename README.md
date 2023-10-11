@@ -22,13 +22,13 @@ It's essential to note that GroovePortal is *not* an audio editor or DAW. Instea
 
 ## How to Download
 
-Download the GroovePortal macOS application from the [GroovePortal GitHub Releases Page](test.com).
+Download the GroovePortal macOS application from the [GroovePortal GitHub Releases Page](https://github.com/gloliva/GroovePortal/releases).
 
 ### Requirements
 
 A Sony PS5 DualSense controller is needed in order to control most of the functionality of GroovePortal.
 
-If you wish to view the Max patches in the [patchers](https://github.com/gloliva/GroovePortal/tree/master/patchers) directory, it is recommended to download the Max Collective (.mxf) file from the [GroovePortal GitHub Releases Page](test.com). However, if you would like to download and view the source files, the following dependencies are required:
+If you wish to view the Max patches in the [patchers](https://github.com/gloliva/GroovePortal/tree/master/patchers) directory, it is recommended to download the Max Collective (.mxf) file from the [GroovePortal GitHub Releases Page](https://github.com/gloliva/GroovePortal/releases). However, if you would like to download and view the source files, the following dependencies are required:
 
 - [dsc.max](https://github.com/zetenynagy/dsc.max) (patches must be in Max file path)
 - [CNMAT-odot](https://github.com/CNMAT/CNMAT-odot) (can be installed via Max Package Manager)
