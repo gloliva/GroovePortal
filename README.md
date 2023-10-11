@@ -7,10 +7,10 @@ Step into the world of GroovePortal, your gateway to a dynamic and immersive aud
 GroovePortal offers a range of powerful features, including:
 
 - Dynamically add new buffer~ and groove~ objects to support loading as many samples as your computer can handle.
-- Create unique Sample Spaces comprising multiple layers that can be traversed, allowing you to craft intricate spatial relationships between audio samples.
-- Navigate the sample space, mixing and blending audio samples based on their spatial properties.
-- Real-time adjustments for blend strength and timestretching parameters.
-- Save your configurations, sample placements, warp points, and more as presets for instant recall.
+- Creating unique Sample Spaces comprising multiple layers that can be traversed, allowing you to craft intricate spatial relationships between audio samples.
+- Navigating the sample space to mix and blend audio samples based on their spatial properties.
+- Adjusting blend strength and timestretching parameters in real-time.
+- Saving your configurations, sample placements, portals, and more as presets for instant recall.
 
 It's essential to note that GroovePortal is *not* an audio editor or DAW. Instead, it stands as a dedicated live performance tool, empowering artists to craft audio experiences that respond to the performer's unique spatial vision.
 
@@ -35,9 +35,9 @@ If you wish to view the Max patches in the [patchers](https://github.com/gloliva
 
 Only one 2D plane, or "layer", is visualized and explored at a time. Points are placed on this layer to represent a horizontal and vertical relationship between them. As the user moves the cursor throughout this space, the samples are blended together depending on the "strength" of the Point (see [Point Parameters](#point-parameters) below).
 
-Each point can be "warped" into, which creates another another layer *within* the point. This point then acts as a gateway or "portal" to and from these two layers.
+Each point can be "warped" into, which creates another another layer *within* the point. This point then acts as a gateway or "portal" between these two layers.
 
-This is the multidimensional component of GroovePortal, each and every point can be warped into to create another layer of samples that is centered around the warp point / portal. This can be used to create extremely deep and "skewed trees", highly dense and "balanced trees", and everything in between. Going deeper into each point and adding additional layers increases the dimensions of the performane space.
+This is the multidimensional component of GroovePortal, each and every point can be warped into to create another layer of samples that is centered around the portal. This can be used to create extremely deep and "skewed trees", highly dense and "balanced trees", and everything in between. Going deeper into each point and adding additional layers increases the dimensions of the performane space.
 
 The user decides which points can be warped into and how many layers exist within each point depending on the relationship they are trying to represent and explore.
 
@@ -51,11 +51,11 @@ In RBFI mode, the user can select points and increase / decrease their inner and
 
 ### Spatial Audio
 
-The spatial relationship between the different points is explored in many ways:
+As the performer moves the cursor closer to a point, the sample at that point is amplified. As the cursor moves away from that point, the sample's amplification is reduced (and ultimatley muted). This allows points to be mixed in interesting ways given the spacial relationships between them. These relationships include:
 
 - The vertical and horizontal distance between the points in the same layer. The distance at which points are placed away from each other determines how the points interact and blend when traversing through the space.
 - Additionally, as the player traverses a single layer, a point to the left of the cursor will have a stronger output from the "Left" or 1st channel, and a point to the right of the cursor will have a stronger output from the "Right" or 2nd channel. If the user has a 4-channel output setup, this functionality can be extended to support the vertical relationship between the points of each layer to affect the output of channels 3 and 4.
-- The depth and dimensional distance between warp points across different layers. When a point is warped into, it creates a new world of sound that is spawned from that point. The warp point can be thought of as the "ending" of the previous layer and the "beginning" of the new layer.
+- The depth and dimensional distance of portals providing access to different layers. When a point is warped into, it creates a new world of sound that is spawned from that point. The portal can be thought of as the "ending" of the previous layer and the "beginning" of the new layer.
 
 ### Sample Centers
 
@@ -150,7 +150,11 @@ These abstractions make use of Max scripting to dynamically create the `buffer~`
 **Dynamically Change Number of Grooves:**  
 ![dynamic_groove_gif](media/gifs/dynamicgroove.gif)
 
-### RBFI Multidimensionality
+### Adding Points and Warping
+
+GroovePortal uses the CNMAT Externals `rbfi` object for placing points on a layer and interpolating between them. The `rbfi` object has experimental features `push` and `pop` which adds or removes layers, and is the core functionality for implementing warping. Output from the `controller.ps5` is processed and converted into `rbfi` messages in order to add, remove, adjust, and warp into and out of points in a layer.
+
+The `rbfi` object requires points to have unique names, so to prevent name collisions the layer identifier is added as a prefix to each point name, allowing a single buffer to be placed on every layer if desired. The base plane's layer identifier is an empty string, so points on that layer will be named directly after the buffer, i.e. `b1` for Buffer1 or `b7` for Buffer7. If a point is warped into, the layer identifier is the portal's name between brackets, for example `[b7]`. Any point added to this layer will be prefixed by this identifier, so placing down a point associated with Buffer2 will be named `[b7]b2`, and so on.
 
 **Add Points and Warps:**  
 ![add_points_and_warps_gif](media/gifs/AddingPointsAndWarps.gif)
