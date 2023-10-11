@@ -16,6 +16,10 @@ It's essential to note that GroovePortal is *not* an audio editor or DAW. Instea
 
 ![presentation_mode](media/patchers/PresentationMode.png)
 
+## Click Below to Watch a Live Demo of GroovePortal
+
+[![youtube_demo](media/title/demo_title_card.png)](https://www.youtube.com/watch?v=gtI-TLkuCc0)
+
 ## How to Download
 
 Download the GroovePortal macOS application from the [GroovePortal GitHub Releases Page](test.com).
