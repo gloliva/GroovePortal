@@ -16,7 +16,11 @@ It's essential to note that GroovePortal is *not* an audio editor or DAW. Instea
 
 ![presentation_mode](media/patchers/PresentationMode.png)
 
-## Click Below to Watch a Live Demo of GroovePortal in Performance Mode
+## Click Below to Watch a Feature Overview of GroovePortal
+
+[![youtube_overview](media/title/overview_title_card.png)](https://youtu.be/y8YVr-Bph6w)
+
+## Click Below to Watch a Live Demo in Performance Mode
 
 [![youtube_demo](media/title/demo_title_card.png)](https://www.youtube.com/watch?v=gtI-TLkuCc0)
 
