@@ -45,7 +45,7 @@ Only one 2D plane, or "layer", is visualized and explored at a time. Points are 
 
 Each point can be "warped" into, which creates another layer *within* the point. This point then acts as a gateway or "portal" between these two layers.
 
-This is the multidimensional component of GroovePortal, each and every point can be warped into to create another layer of samples that is centered around the portal. This can be used to create extremely deep and "skewed trees", highly dense and "balanced trees", and everything in between. Going deeper into each point and adding additional layers increases the dimensions of the performane space.
+This is the multidimensional component of GroovePortal, each and every point can be warped into to create another layer of samples that is centered around the portal. This can be used to create extremely deep and "skewed trees", highly dense and "balanced trees", and everything in between. Going deeper into each point and adding additional layers increases the dimensions of the performance space.
 
 The user decides which points can be warped into and how many layers exist within each point depending on the relationship they are trying to represent and explore.
 
