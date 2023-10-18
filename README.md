@@ -59,7 +59,7 @@ In RBFI mode, the user can select points and increase / decrease their inner and
 
 ### Spatial Audio
 
-As the performer moves the cursor closer to a point, the sample at that point is amplified. As the cursor moves away from that point, the sample's amplification is reduced (and ultimatley muted). This allows points to be mixed in interesting ways given the spacial relationships between them. These relationships include:
+As the performer moves the cursor closer to a point, the sample at that point is amplified. As the cursor moves away from that point, the sample's amplification is reduced (and ultimately muted). This allows points to be mixed in interesting ways given the spatial relationships between them. These relationships include:
 
 - The vertical and horizontal distance between the points in the same layer. The distance at which points are placed away from each other determines how the points interact and blend when traversing through the space.
 - Additionally, as the player traverses a single layer, a point to the left of the cursor will have a stronger output from the "Left" or 1st channel, and a point to the right of the cursor will have a stronger output from the "Right" or 2nd channel. If the user has a 4-channel output setup, this functionality can be extended to support the vertical relationship between the points of each layer to affect the output of channels 3 and 4.
